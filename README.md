@@ -6,8 +6,8 @@
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=TheBigEye&count_private=true&show_icons=true&theme=vue)
 
 ## Languages
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Batchfile&theme=vue)
-
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Batchfile&theme=vue&layout=compact)
+[![willianrod's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=TheBigEye)](https://github.com/anuraghazra/github-readme-stats)
 
 ## My proyects:
 
