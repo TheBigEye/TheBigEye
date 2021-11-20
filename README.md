@@ -24,7 +24,7 @@
 -->
 
 <div>
-<a href="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS&theme=vue">
-  <img  align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS" />
+<a href="https://github.com/TheBigEye/Python-OS">
+  <img  align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS&theme=vue" />
 </a>
 </div>
