@@ -7,8 +7,6 @@
 
 ## Languages
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Batchfile&theme=vue&layout=compact)
-###
-![Wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=TheBigEye&v=2)
 
 ## My proyects:
 
