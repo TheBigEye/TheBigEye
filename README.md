@@ -7,13 +7,24 @@
 
 <!--
 ![GitHub stats](https://readme-stats-cfgj2cxdy.vercel.app/api?username=TheBigEye&count_private=true&show_icons=true&theme=vue)
-![Top Langs](https://readme-stats-cfgj2cxdy.vercel.app/api/top-langs/?username=TheBigEye&theme=vue)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Java&theme=vue)
 -->
 <div>
 <a href="https://github-readme-stats.vercel.app/api?username=TheBigEye&theme=vue">
   <img  align="left" src="https://github-readme-stats.vercel.app/api?username=TheBigEye&count_private=true&show_icons=true&theme=vue" />
 </a>
 <a href="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=php&theme=vue">
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=php&theme=vue" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Java,Makefile,Batchfile&theme=vue" />
+</a>
+</div>
+
+## My proyects:
+<!--
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS)](https://github.com/TheBigEye/Python-OS)
+-->
+
+<div>
+<a href="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS&theme=vue">
+  <img  align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS" />
 </a>
 </div>
