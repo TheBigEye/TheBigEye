@@ -8,17 +8,3 @@
 ## Languages
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Batchfile&theme=vue&layout=compact)
 
-## My proyects:
-
-<!--
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS)](https://github.com/TheBigEye/Python-OS)
-[![Readme Card 2](https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Vixen-chatbot)](https://github.com/TheBigEye/Vixen-chatbot)
--->
-<div>
-<a href="https://github.com/TheBigEye/Python-OS">
-  <img  align="left" src="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Python-OS" />
-</a>
-<a href="https://github.com/TheBigEye/Vixen-chatbot">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=TheBigEye&repo=Vixen-chatbot" />
-</a>
-</div>
