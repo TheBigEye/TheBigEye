@@ -1,10 +1,22 @@
-# Eye statistics 👀
+<h1 align="center">Hi 👋, I'm an Eye</h1>
+<h3 align="center">An eye high on caffeine having fun with programming</h3>
 
-![Views](https://komarev.com/ghpvc/?username=TheBigEye&theme=vue)
-[![Github](https://img.shields.io/github/followers/TheBigEye?label=Follow&style=social&theme=vue)](https://github.com/TheBigEye)
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=0e75b6&style=flat" alt="thebigeye" /> </p>
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=TheBigEye&count_private=true&show_icons=true&theme=vue)
+- 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft-mod)*
 
-## Languages
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&hide=Batchfile&theme=vue&layout=compact)
+- 🌱 I’m currently learning *Python, java, OS development and games development*
+
+- 👯 I’m looking to collaborate on *[Minicraft plus](https://github.com/chrisj42/minicraft-plus-revived)*
+
+- ⚡ Fun fact *lol*
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
+
+<p><img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact" alt="thebigeye" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+
 
