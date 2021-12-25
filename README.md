@@ -12,7 +12,7 @@
 
 - 👯 I’m currently collaborating on *[Minicraft +](https://github.com/chrisj42/minicraft-plus-revived)*
 
-- ⚡ Fun fact *lol*
+- ⚡ Fun fact *LOL*
 
 <h3 align="left">Eye stadistics 👀 :</h3>
 <p align="left">
