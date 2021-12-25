@@ -11,12 +11,13 @@
 
 - ⚡ Fun fact *lol*
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Eye stadistics 👀 :</h3>
 <p align="left">
 </p>
 
-<p><img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact" alt="thebigeye" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
 
-<p>&nbsp;<img align="left" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+
 
 
