@@ -18,7 +18,7 @@
 <p align="left">
 </p>
 
-<p><img width="25%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+<p><img width="42%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact" alt="thebigeye" /></p>
 <p>&nbsp;<img width="50%" align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
 
 
