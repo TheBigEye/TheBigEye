@@ -10,7 +10,7 @@
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*
 
-- 👯 I’m looking to collaborate on *[Minicraft plus](https://github.com/chrisj42/minicraft-plus-revived)*
+- 👯 I’m currently collaborating on *[Minicraft +](https://github.com/chrisj42/minicraft-plus-revived)*
 
 - ⚡ Fun fact *lol*
 
