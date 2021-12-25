@@ -6,7 +6,7 @@
 <img width="55%" align="right" alt="Github" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg" />
 
 
-- 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft-mod)*
+- 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft-mod)* and *[Python OS](https://github.com/TheBigEye/Python-OS)*
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*
 
