@@ -3,6 +3,9 @@
 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=0e75b6&style=flat" alt="thebigeye" /> </p>
 
+<img width="55%" align="right" alt="Github" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg" />
+
+
 - 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft-mod)*
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*
@@ -15,8 +18,9 @@
 <p align="left">
 </p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+<p><img width="25%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+<p>&nbsp;<img width="50%" align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+
 
 
 
