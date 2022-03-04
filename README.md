@@ -3,9 +3,16 @@
 
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=0e75b6&style=flat" alt="thebigeye" /> </p>
 
-<img width="55%" align="right" alt="Github" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg" />
+<!-- Light or dark according to the github theme that the user has when viewing it -->
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
+  <img width="55%" align="right" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg?theme=light" alt="Github" />
+</a>
 
+<a href="https://github.com/TheBigEye#gh-dark-mode-only">
+  <img width="55%" align="right" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg?theme=dark" alt="Github" />
+</a>
 
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 - 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft)* and *[Python OS](https://github.com/TheBigEye/Python-OS)*.
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*.
@@ -18,8 +25,23 @@
 <p align="left">
 </p>
 
-<p><img width="42%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact" alt="thebigeye" /></p>
-<p>&nbsp;<img width="50%" align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en" alt="thebigeye" /></p>
+<!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
+  <img width="42%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact&theme=light&hide_border=true&langs_count=6" alt="thebigeye" />
+</a>
+<a href="https://github.com/TheBigEye#gh-dark-mode-only">
+  <img width="42%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=thebigeye&show_icons=true&locale=en&layout=compact&theme=dark&hide_border=true&langs_count=6" alt="thebigeye" />
+</a>
+
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
+  <img width="50%" align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en&theme=light&hide_border=true" alt="thebigeye" />
+</a>
+<a href="https://github.com/TheBigEye#gh-dark-mode-only">
+  <img width="50%" align="center" src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&locale=en&theme=dark&hide_border=true" alt="thebigeye" />
+</a>
+
+<!-- ------------------------------------------------------------------------------- END --------------------------------------------------------------------------------- -->
 
 
 
