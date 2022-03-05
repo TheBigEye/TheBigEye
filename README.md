@@ -7,7 +7,7 @@
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
-  <img width="55%" align="right" src="https://user-images.githubusercontent.com/63316583/156903215-564cb337-d540-4db2-b370-68c2717e3926.svg?theme=light" alt="Nice lightning!" />
+  <img width="55%" align="right" src="https://user-images.githubusercontent.com/63316583/156903583-01f91228-380f-41cc-8241-4abe8bb3f8dc.svg?theme=light" alt="Nice lightning!" />
 
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
   <img width="55%" align="left" src="https://user-images.githubusercontent.com/63316583/156903409-8a224876-1141-4e87-880c-b66027211800.svg?theme=dark" alt="Too dark!" />
@@ -18,7 +18,7 @@
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*.
 
-- 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*.
+- 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*
 
 - ⚡ Fun fact *LOL*.
 
