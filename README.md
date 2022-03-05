@@ -7,10 +7,11 @@
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
-  <img width="55%" align="right" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg?theme=light" alt="Github" />
+  <img width="55%" align="right" src="https://user-images.githubusercontent.com/63316583/156903215-564cb337-d540-4db2-b370-68c2717e3926.svg?theme=light" alt="Nice lightning!" />
 </a>
+
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-  <img width="55%" align="left" src="https://consugus.github.io/open-source-guide/assets/images/illos/squirrel.svg?theme=dark" alt="Github" />
+  <img width="55%" align="left" src="https://user-images.githubusercontent.com/63316583/156903186-2455f5f8-4f2c-444d-9ee0-2cb0fa46a698.svg?theme=dark" alt="Too dark!" />
 </a>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
