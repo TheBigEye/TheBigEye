@@ -9,7 +9,7 @@
 </a>
 
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-  <img width="55%" align="right" src="https://raw.githubusercontent.com/onimur/.github/master/.resources/git-header.svg?theme=dark" alt="Github" />
+  <img width="55%" align="left" src="https://consugus.github.io/open-source-guide/assets/images/illos/squirrel.svg?theme=dark" alt="Github" />
 </a>
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -42,6 +42,14 @@
 </a>
 
 <!-- ------------------------------------------------------------------------------- END --------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
 
 
 
