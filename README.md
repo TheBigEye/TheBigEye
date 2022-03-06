@@ -2,7 +2,7 @@
 <h3 align="center">An eye high on caffeine having fun with programming</h3>
 
 
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=0d1117&style=flat" alt="thebigeye" /> </p>
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=8f8f8f&style=flat" alt="thebigeye" /> </p>
 
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
