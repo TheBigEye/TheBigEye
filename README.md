@@ -21,10 +21,10 @@
 - 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*
 
 - ⚡ Fun fact *LOL*.
-
-<h3 align="left">Eye stadistics 👀 :</h3>
-<p align="left">
-</p>
+  
+- 🎨 Favorite color Green
+  
+- 😎 Favorite editor VScode
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
