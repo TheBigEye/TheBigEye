@@ -41,13 +41,12 @@
 
 - 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*
 
-- ⚡ Fun fact 
 <a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
-   *This looks better in dark mode*. 
-</a>     
+   - ⚡ Fun fact *This looks better in dark mode*. 
+</a> 
 
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">  <!-- Dark mode -->
-   *This looks better in light mode*.
+   - ⚡ Fun fact *This looks better in light mode*.
 </a> 
 
 - 🎨 Favorite color *green*.
