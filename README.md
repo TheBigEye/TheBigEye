@@ -21,7 +21,7 @@
 <img 
      width="55%"
      align="right"
-     src="https://user-images.githubusercontent.com/63316583/156903583-01f91228-380f-41cc-8241-4abe8bb3f8dc.svg#gh-light-mode-only" 
+     src="Assets/Squirrel/Light.svg#gh-light-mode-only" 
      alt="Nice lightning!" 
 />
 
@@ -29,7 +29,7 @@
 <img 
      width="55%"
      align="left"
-     src="https://user-images.githubusercontent.com/63316583/156903409-8a224876-1141-4e87-880c-b66027211800.svg#gh-dark-mode-only" 
+     src="Assets/Squirrel/Dark.svg#gh-dark-mode-only" 
      alt="Too dark!" 
 />
 
