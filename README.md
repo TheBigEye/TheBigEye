@@ -16,23 +16,23 @@
 
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
-<a href="https://github.com/TheBigEye#gh-light-mode-only"> <!-- Light mode -->
-  <img 
-       width="55%"
-       align="right"
-       src="https://user-images.githubusercontent.com/63316583/156903583-01f91228-380f-41cc-8241-4abe8bb3f8dc.svg?theme=light" 
-       alt="Nice lightning!" 
-  />
-</a>
 
-<a href="https://github.com/TheBigEye#gh-dark-mode-only">  <!-- Dark mode -->
-  <img 
-       width="55%"
-       align="left"
-       src="https://user-images.githubusercontent.com/63316583/156903409-8a224876-1141-4e87-880c-b66027211800.svg?theme=dark" 
-       alt="Too dark!" 
-  />
-</a>
+ <!-- light mode -->
+<img 
+     width="55%"
+     align="right"
+     src="https://user-images.githubusercontent.com/63316583/156903583-01f91228-380f-41cc-8241-4abe8bb3f8dc.svg#gh-light-mode-only" 
+     alt="Nice lightning!" 
+/>
+
+ <!-- Dark mode -->
+<img 
+     width="55%"
+     align="left"
+     src="https://user-images.githubusercontent.com/63316583/156903409-8a224876-1141-4e87-880c-b66027211800.svg#gh-dark-mode-only" 
+     alt="Too dark!" 
+/>
+
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 - 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft)* and *[Python OS](https://github.com/TheBigEye/Python-OS)*.
@@ -42,11 +42,11 @@
 - 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*
 
 <a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
-- ⚡ Fun fact *This looks better in dark mode*. 
+   - ⚡ Fun fact *This looks better in dark mode*. 
 </a>     
 
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">  <!-- Dark mode -->
-- ⚡ Fun fact *This looks better in light mode*.
+   - ⚡ Fun fact *This looks better in light mode*.
 </a> 
 
 - 🎨 Favorite color *green*.
