@@ -9,7 +9,7 @@
 <p 
    align="center"> 
   <img 
-       src="https://komarev.com/ghpvc/?username=thebigeye&label=Profile%20views&color=8f8f8f&style=flat" 
+       src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&color=8f8f8f&style=flat" 
        alt="thebigeye" 
   />
 </p>
@@ -55,24 +55,24 @@
 
 <!-- User stats -->
 <p align="left">
-<a href="https://github.com/TheBigEye#gh-light-mode-only">
-        <!-- Light mode -->
-        <img
-             width="48%"
-             align="left"
-             src="https://github-readme-stats.vercel.app/api?username=thebigeye&layout=compact&show_icons=true&theme=light&custom_title=&hide_border=true"
-             alt="thebigeye"
-        />
-    </a>
-    <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-        <!-- Dark mode -->
-        <img
-             width="48%"
-             align="left"
-             src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
-             alt="thebigeye"
-        />
-</a>
+     <a href="https://github.com/TheBigEye#gh-light-mode-only">
+          <!-- Light mode -->
+          <img
+               width="48%"
+               align="left"
+               src="https://github-readme-stats.vercel.app/api?username=thebigeye&layout=compact&show_icons=true&theme=light&custom_title=&hide_border=true"
+               alt="thebigeye"
+          />
+     </a>
+     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
+          <!-- Dark mode -->
+          <img
+               width="48%"
+               align="left"
+               src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
+               alt="thebigeye"
+          />
+     </a>
 </p>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -81,16 +81,16 @@
     <a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img
-             width="42%"
-             align="center"
+             width="41%"
+             align="right"
              src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&theme=light&custom_title=&hide_border=true&langs_count=6"                  alt="thebigeye"
         />
     </a>
     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
         <!-- Dark mode -->
         <img
-             width="42%"
-             align="center"
+             width="41%"
+             align="right"
              src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
              alt="thebigeye"
         />
