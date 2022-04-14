@@ -104,7 +104,7 @@
     <a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img
-             width="42%"
+             width="48%"
              align="center"
              src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&theme=light&custom_title=&hide_border=true&langs_count=6"                  alt="thebigeye"
         />
@@ -112,7 +112,7 @@
     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
         <!-- Dark mode -->
         <img
-             width="42%"
+             width="48%"
              align="center"
              src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
              alt="thebigeye"
