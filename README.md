@@ -54,7 +54,7 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- User stats -->
-
+<p align="left">
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img
@@ -73,30 +73,7 @@
              alt="thebigeye"
         />
 </a>
-
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
-
-<!-- Contributions -->
-
-<a href="https://github.com/TheBigEye#gh-light-mode-only">
-        <!-- Light mode -->
-        <img
-             width="48%"
-             align="right"
-             src="http://github-readme-streak-stats.herokuapp.com?user=thebigeye&layout=compact&show_icons=true&theme=light&custom_title=&hide_border=true"
-             alt="thebigeye"
-        />
-    </a>
-    <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-        <!-- Dark mode -->
-        <img
-             width="48%"
-             align="right"
-             src="http://github-readme-streak-stats.herokuapp.com?user=username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
-             alt="thebigeye"
-        />
-</a>
-
+</p>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Top langs used -->
