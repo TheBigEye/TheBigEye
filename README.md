@@ -102,12 +102,12 @@
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=ffffff&color=0d0d0d&line=debede&point=4f4f4f&hide_border=true" 
+          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=ffffff&color=0d0d0d&line=debede&point=4f4f4f&custom_title=%20&hide_border=true" 
      />
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=0d1117&color=a0a0a0&line=000000&point=4f4f4f&hide_border=true" 
+          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=0d1117&color=a0a0a0&line=000000&point=4f4f4f&custom_title=%20&hide_border=true" 
      />
 </a>
