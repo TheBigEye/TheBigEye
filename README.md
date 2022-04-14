@@ -52,10 +52,10 @@
 - 🎨 Favorite color *green*.
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
-<p align="center">
+
 <!-- User stats -->
-<p align="left">
-    <a href="https://github.com/TheBigEye#gh-light-mode-only">
+
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img
              width="48%"
@@ -72,13 +72,13 @@
              src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
              alt="thebigeye"
         />
-    </a>
-</p>
+</a>
+
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Contributions -->
-<p align="right">
-    <a href="https://github.com/TheBigEye#gh-light-mode-only">
+
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img
              width="48%"
@@ -95,8 +95,8 @@
              src="http://github-readme-streak-stats.herokuapp.com?user=username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
              alt="thebigeye"
         />
-    </a>
-</p>
+</a>
+
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Top langs used -->
@@ -119,5 +119,5 @@
         />
     </a>
 </p>
-</p>
+
 <!-- ------------------------------------------------------------------------------- END ----------------------------------------------------------------------------->
