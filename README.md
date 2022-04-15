@@ -41,8 +41,8 @@
 <img 
      width="55%"
      align="right"
-     src="Assets/Squirrel/Light.svg#gh-light-mode-only" 
-     alt="Nice lightning!" 
+     src="Assets/Squirrel/Light.svg#gh-light-mode-only"
+     title="Yay!, Lot views!!"
 />
 
  <!-- Dark mode -->
@@ -50,7 +50,7 @@
      width="55%"
      align="left"
      src="Assets/Squirrel/Dark.svg#gh-dark-mode-only" 
-     alt="Too dark!" 
+     title="Hey, who turned off the light?" 
 />
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
