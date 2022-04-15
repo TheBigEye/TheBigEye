@@ -115,7 +115,7 @@
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
      <img 
-          alt="TheBigEye's Activity Graph" 
+          alt="TheBigEye's Activity Graph." 
           src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=0d1117&color=a0a0a0&line=000000&point=4f4f4f&custom_title=%20&hide_border=true" 
      />
 </a>
