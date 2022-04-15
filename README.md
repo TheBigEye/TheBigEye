@@ -2,6 +2,7 @@
 <h1 align="center">Hi 🌎, I'm an Eye</h1>
 <h3 align="center">An eye high on caffeine having fun with programming</h3>
 
+<!-- Im dumb, this not works -->
 <div 
      style="padding: 20px; opacity: 0;height: 20px;" 
      onmouseout="alert('I see you!')">
@@ -9,12 +10,19 @@
 
 <p 
    align="center"> 
-  <img 
-       src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&style=flat&theme=light" 
-       alt="thebigeye" 
-  />
+     <a href="https://github.com/TheBigEye#gh-light-mode-only"> <!-- light mode -->
+          <img 
+               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&style=flat" 
+               alt="thebigeye" 
+          />
+     </a>
+     <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <!-- dark mode -->
+          <img 
+               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&color=000000&style=flat" 
+               alt="thebigeye" 
+          />
+     </a>
 </p>
-
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
 
