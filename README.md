@@ -19,8 +19,7 @@
 </p>
 
 <!-- Views -->
-<p 
-   align="center"> 
+<p align="center"> 
      <a href="https://github.com/TheBigEye#gh-light-mode-only"> <!-- light mode -->
           <img 
                src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" 
