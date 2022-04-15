@@ -49,7 +49,7 @@
 
 - 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*.
 
-- ⚡ Fun fact,
+- ⚡ Fun fact, 
 <a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
 *this looks better in dark mode*. 
 </a> 
