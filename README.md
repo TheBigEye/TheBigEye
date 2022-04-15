@@ -110,7 +110,7 @@
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=ffffff&color=0d0d0d&line=89CFF0&point=4f4f4f&custom_title=%20&hide_border=true" 
+          src="https://denvercoder1-activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=ffffff&color=0d0d0d&line=45b6fe&point=3992cb&custom_title=%20&hide_border=true" 
      />
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
