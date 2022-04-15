@@ -10,7 +10,7 @@
 <p 
    align="center"> 
   <img 
-       src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&color=8d8d8d&style=flat" 
+       src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&style=flat&theme=light" 
        alt="thebigeye" 
   />
 </p>
@@ -34,20 +34,19 @@
      alt="Too dark!" 
 />
 
-
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on *[Aircraft](https://github.com/TheBigEye/Aircraft)* and *[Python OS](https://github.com/TheBigEye/Python-OS)*.
 
 - 🌱 I’m currently learning *Python, java, OS development and games development*.
 
-- 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*
+- 👯 I’m currently collaborating on *[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)*.
 
+- ⚡ Fun fact,
 <a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
-   - ⚡ Fun fact *This looks better in dark mode*. 
+*this looks better in dark mode*. 
 </a> 
-
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">  <!-- Dark mode -->
-   - ⚡ Fun fact *This looks better in light mode*.
+*this looks better in light mode*.
 </a> 
 
 - 🎨 Favorite color *green*.
