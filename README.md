@@ -12,13 +12,13 @@
    align="center"> 
      <a href="https://github.com/TheBigEye#gh-light-mode-only"> <!-- light mode -->
           <img 
-               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&style=flat" 
+               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" 
                alt="thebigeye" 
           />
      </a>
      <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <!-- dark mode -->
           <img 
-               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Profile%20views&color=000000&style=flat" 
+               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&color=000000&style=for-the-badge" 
                alt="thebigeye" 
           />
      </a>
