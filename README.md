@@ -122,14 +122,14 @@
      <!-- Light mode -->
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=ffffff&color=0d0d0d&line=45b6fe&point=3992cb&custom_title=%20&hide_border=true" 
+          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=ffffff&color=0d0d0d&area_color=45b6fe&area=true&line=45b6fe&point=3992cb&custom_title=%20&hide_border=true" 
      />
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
      <!-- Dark mode -->
      <img 
           alt="TheBigEye's Activity Graph." 
-          src="https://activity-graph.herokuapp.com/graph/?username=TheBigEye&bg_color=0d1117&color=a0a0a0&line=000000&point=4f4f4f&custom_title=%20&hide_border=true" 
+          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=0d1117&color=a0a0a0&area_color=000000&area=true&line=000000&point=4f4f4f&custom_title=%20&hide_border=true" 
      />
 </a>
 
