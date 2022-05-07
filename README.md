@@ -49,7 +49,7 @@
      width="55%"
      align="left"
      src="Assets/Squirrel/Dark.svg#gh-dark-mode-only" 
-     title="Hey, who turned off the light?" 
+     title="Hey, who turned off the lights?" 
 />
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
