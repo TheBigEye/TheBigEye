@@ -6,14 +6,14 @@
         <!-- light mode -->
         <img
              width="100%"
-             src="https://capsule-render.vercel.app/api?type=transparent&color=c4ffff&height=150&section=header&text=Hi%20🌎,%20I'm%20an%20Eye%20&fontSize=79&animation=fadeIn&fontAlignY=38&desc=An%20eye%20high%20on%20caffeine%20having%20fun%20with%20programming&descAlignY=75&descAlign=50&descSize=22" alt="Nice lightning!"
+             src="Assets/Header/Light.svg" alt="Nice lightning!"
          />
     </a>
     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
         <!-- dark mode -->
         <img
              width="100%"
-             src="https://capsule-render.vercel.app/api?type=transparent&color=c4ffff&height=150&section=header&text=Hi%20🌎,%20I'm%20an%20Eye%20&fontSize=80&animation=fadeIn&fontAlignY=38&desc=An%20eye%20high%20on%20caffeine%20having%20fun%20with%20programming&descAlignY=75&descAlign=50&descSize=22&fontColor=f0f0f0" alt="Too dark!!"
+             src="Assets/Header/Dark.svg" alt="Too dark!!"
          />
     </a>
 </p>
