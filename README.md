@@ -88,7 +88,7 @@
           <img
                width="49%"
                align="left"
-               src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
+               src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -111,7 +111,7 @@
         <img
              width="42%"
              align="right"
-             src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0d1117&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
+             src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
              alt="thebigeye"
          />
     </a>
@@ -123,14 +123,14 @@
      <!-- Light mode -->
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=ffffff&color=0d0d0d&area_color=3992cb&area=true&line=45b6fe&point=3992cb&hide_title=true&hide_border=true" 
+          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=0000&color=0d0d0d&area_color=3992cb&area=true&line=45b6fe&point=3992cb&hide_title=true&hide_border=true" 
      />
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
      <!-- Dark mode -->
      <img 
           alt="TheBigEye's Activity Graph." 
-          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=0d1117&color=a0a0a0&area_color=4f4f4f&area=true&line=000000&point=4f4f4f&hide_title=true&hide_border=true" 
+          src="https://activity-graph.herokuapp.com/graph?username=TheBigEye&bg_color=0000&color=a0a0a0&area_color=4f4f4f&area=true&line=000000&point=4f4f4f&hide_title=true&hide_border=true" 
      />
 </a>
 
