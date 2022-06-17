@@ -27,12 +27,6 @@
                alt="thebigeye" 
           />
      </a>
-     <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <!-- dark mode -->
-          <img 
-               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&color=000000&style=for-the-badge" 
-               alt="thebigeye" 
-          />
-     </a>
 </p>
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
