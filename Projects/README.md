@@ -1,0 +1,1 @@
+- This contains all the necessary assets for the dynamic readmes of some of my projects to work
