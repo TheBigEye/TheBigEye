@@ -73,7 +73,7 @@
           <img
                width="49%"
                align="left"
-               src="https://github-readme-stats.vercel.app/api?username=thebigeye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
+               src="https://github-readme-stats-ruby-one.vercel.app/api?username=thebigeye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -82,7 +82,7 @@
           <img
                width="49%"
                align="left"
-               src="https://github-readme-stats.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
+               src="https://github-readme-stats-ruby-one.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -96,7 +96,7 @@
         <img 
              width="42%"
              align="right"
-             src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
+             src="https://github-readme-stats-ruby-one.vercel.app/api/top-langs?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
              alt="thebigeye"
          />
     </a>
@@ -105,7 +105,7 @@
         <img
              width="42%"
              align="right"
-             src="https://github-readme-stats.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
+             src="https://github-readme-stats-ruby-one.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
              alt="thebigeye"
          />
     </a>
