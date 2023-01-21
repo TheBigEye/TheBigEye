@@ -73,7 +73,7 @@
           <img
                width="49%"
                align="left"
-               src="https://github-readme-stats-ruby-one.vercel.app/api?username=thebigeye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
+               src="https://github-readme-stats.vercel.app/api/?username=TheBigEye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -82,7 +82,7 @@
           <img
                width="49%"
                align="left"
-               src="https://github-readme-stats-ruby-one.vercel.app/api?username=thebigeye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
+               src="https://github-readme-stats.vercel.app/api/?username=TheBigEye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -96,8 +96,8 @@
         <img 
              width="42%"
              align="right"
-             src="https://github-readme-stats-ruby-one.vercel.app/api/top-langs?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
-             alt="thebigeye"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
+             alt="I also know english"
          />
     </a>
     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
@@ -105,11 +105,12 @@
         <img
              width="42%"
              align="right"
-             src="https://github-readme-stats-ruby-one.vercel.app/api/top-langs?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
-             alt="thebigeye"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
+             alt="I also know english"
          />
     </a>
 </p>
+
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- Contributions -->
