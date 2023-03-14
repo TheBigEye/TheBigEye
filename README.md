@@ -1,57 +1,23 @@
-<!-- ----------------------------------------------------------------------- Main README ----------------------------------------------------------------------------->
+<!-- ------ README --------->
 
-<!-- Text header -->   
-<!-- OLD: "https://capsule-render.vercel.app/api?type=transparent&color=c4ffff&height=150&section=header&text=Hi%20🌎,%20I'm%20an%20Eye%20&fontSize=79&animation=fadeIn&fontAlignY=38&desc=An%20eye%20high%20on%20caffeine%20having%20fun%20with%20programming&descAlignY=75&descAlign=50&descSize=22" -->
+<!-- Header -->   
 <p align="center">
-    <a href="https://github.com/TheBigEye#gh-light-mode-only">
-        <!-- light mode -->
-        <img
-             width="100%"
-             src="Assets/Header/Light.svg" alt="Nice lightning!"
-         />
-    </a>
-    <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-        <!-- dark mode -->
-        <img
-             width="100%"
-             src="Assets/Header/Dark.svg" alt="Too dark!!"
-         />
-    </a>
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="Assets/Header/Light.svg" alt="Nice lightning!" id="header-light" width="100%" /> </a> <!-- light mode -->
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="Assets/Header/Dark.svg" alt="Too dark!!" id="header-dark" width="100%" /> </a> <!-- dark mode -->
 </p>
 
 <!-- Views -->
 <p align="center"> 
-     <a href="https://github.com/TheBigEye">
-          <img 
-               src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" 
-               alt="thebigeye" 
-          />
-     </a>
+     <a href="https://github.com/TheBigEye" style="text-shadow: 2px 2px 2px #333;"> <img src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" /> </a>
 </p>
 
 <!-- Light or dark according to the github theme that the user has when viewing it -->
-
- <!-- light mode -->
-<img 
-     width="55%"
-     align="right"
-     src="Assets/Squirrel/Light.svg#gh-light-mode-only"
-     title="Yay!, Lot views!!"
-/>
-
- <!-- Dark mode -->
-<img 
-     width="55%"
-     align="left"
-     src="Assets/Squirrel/Dark.svg#gh-dark-mode-only" 
-     title="Hey, who turned off the lights?" 
-/>
+<img width="55%" align="right" src="Assets/Squirrel/Light.svg#gh-light-mode-only" />  <!-- light mode -->
+<img width="55%" align="left" src="Assets/Squirrel/Dark.svg#gh-dark-mode-only" />  <!-- Dark mode -->
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on **[Aircraft](https://github.com/TheBigEye/Aircraft)** and **[Python OS](https://github.com/TheBigEye/Python-OS)**.
-
 - 🌱 I’m currently learning **[Python](https://github.com/topics/python)**, **[Java](https://github.com/topics/java)**, **[C/C++](https://github.com/topics/cpp)**, **[OS](https://github.com/topics/operating-system)** and **[Games](https://github.com/topics/game-engine)** development.
-
 - 👯 I’m currently collaborating on **[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)**.
 
 - ⚡ Fun fact, 
@@ -62,7 +28,7 @@
 **This looks better in light mode**.
 </a> 
 
-- 🎨 Favorite color **Green**.
+- 🎨 **Green** is my favorite color.
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -133,4 +99,3 @@
 <!-- Header and footer svgs --- kyechan99/capsule-render -->
 <!-- Views counter --- antonkomarev/github-profile-views-counter -->
 <!-- ---------------------------------------------------------------------------- END -------------------------------------------------------------------------------->
-![](https://hit.yhype.me/github/profile?user_id=63316583)
