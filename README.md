@@ -18,7 +18,7 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on **[Aircraft](https://github.com/TheBigEye/Aircraft)** and **[Python OS](https://github.com/TheBigEye/Python-OS)**.
 - 🌱 I’m currently learning **[Python](https://github.com/topics/python)**, **[Java](https://github.com/topics/java)**, **[C/C++](https://github.com/topics/cpp)**, **[OS](https://github.com/topics/operating-system)** and **[Games](https://github.com/topics/game-engine)** development.
-- 👯 I’m currently collaborating on **[Minicraft +](https://github.com/MinicraftPlus/minicraft-plus-revived)**.
+- 👯 I’m currently collaborating on **[Minicraft+](https://github.com/MinicraftPlus/minicraft-plus-revived)**.
 
 - ⚡ Fun fact, 
 <a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
