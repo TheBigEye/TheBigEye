@@ -19,15 +19,7 @@
 - 🔭 I’m currently working on **[Aircraft](https://github.com/TheBigEye/Aircraft)** and **[Python OS](https://github.com/TheBigEye/Python-OS)**.
 - 🌱 I’m currently learning **[Python](https://github.com/topics/python)**, **[Java](https://github.com/topics/java)**, **[C/C++](https://github.com/topics/cpp)**, **[OS](https://github.com/topics/operating-system)** and **[Games](https://github.com/topics/game-engine)** development.
 - 👯 I’m currently collaborating on **[Minicraft+](https://github.com/MinicraftPlus/minicraft-plus-revived)**.
-
-- ⚡ Fun fact, 
-<a href="https://github.com/TheBigEye#gh-light-mode-only">  <!-- light mode -->
-**This looks better in dark mode**. 
-</a> 
-<a href="https://github.com/TheBigEye#gh-dark-mode-only">  <!-- Dark mode -->
-**This looks better in light mode**.
-</a> 
-
+- ⚡ Fun fact, **[Assembly Language](https://github.com/topics/assembly-language)** is easy to write, hard to learn.
 - 🎨 **Green** is my favorite color.
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -62,7 +54,7 @@
         <img 
              width="42%"
              align="right"
-             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=000000&custom_title=&hide_border=true&langs_count=6"
              alt="I also know english"
          />
     </a>
@@ -84,7 +76,7 @@
      <!-- Light mode -->
      <img 
           alt="TheBigEye's Activity Graph" 
-          src="https://github-readme-activity-graph.vercel.app/graph?username=TheBigEye&bg_color=0000&color=0d0d0d&area_color=0076c2&area=true&line=45b6fe&point=3992cb&hide_title=true&hide_border=true" 
+          src="https://github-readme-activity-graph.vercel.app/graph?username=TheBigEye&bg_color=0000&color=0d0d0d&area_color=3992cb&area=true&line=45b6fe&point=3992cb&hide_title=true&hide_border=true" 
      />
 </a>
 <a href="https://github.com/TheBigEye#gh-dark-mode-only">
