@@ -54,7 +54,7 @@
         <img 
              width="42%"
              align="right"
-             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=000000&custom_title=&hide_border=true&langs_count=6"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
              alt="I also know english"
          />
     </a>
