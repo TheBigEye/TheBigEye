@@ -12,8 +12,8 @@
 </p>
 
 <p align="left">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/books-stack-light.png" id="header-light" width="54%" align="left" /> </a> <!-- light mode -->
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="54%" align="left" /> </a> <!-- dark mode -->
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/books-stack-light.png" id="header-light" width="56%" align="left" /> </a> <!-- light mode -->
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="56%" align="left" /> </a> <!-- dark mode -->
 </p>
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -53,7 +53,7 @@
     <a href="https://github.com/TheBigEye#gh-light-mode-only">
         <!-- Light mode -->
         <img 
-             width="34%"
+             width="36%"
              align="left"
              src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&theme=light&bg_color=0000&custom_title=&hide_border=true&langs_count=6"
              alt="I also know english"
@@ -62,7 +62,7 @@
     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
         <!-- Dark mode -->
         <img
-             width="34%"
+             width="36%"
              align="left"
              src="https://github-readme-stats.vercel.app/api/top-langs/?username=TheBigEye&layout=compact&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true&langs_count=6"
              alt="I also know english"
