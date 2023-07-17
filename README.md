@@ -11,8 +11,14 @@
      <a href="https://github.com/TheBigEye" style="text-shadow: 2px 2px 2px #333;"> <img src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" /> </a>
 </p>
 
-<img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/1a529295-05ac-49c9-8517-71a2c738eea6#gh-light-mode-only" />
-<img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/cb1f8800-e827-4e43-b854-eafffc446b4f#gh-dark-mode-only" />
+
+<a href="https://github.com/TheBigEye#gh-light-mode-only">
+    <img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/1a529295-05ac-49c9-8517-71a2c738eea6" />
+</a>
+<a href="https://github.com/TheBigEye#gh-dark-mode-only">
+    <img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/cb1f8800-e827-4e43-b854-eafffc446b4f" />
+</a>
+
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on **[Aircraft](https://github.com/TheBigEye/Aircraft)** and **[Python OS](https://github.com/TheBigEye/Python-OS)**.
