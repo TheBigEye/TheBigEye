@@ -12,8 +12,8 @@
 </p>
 
 <p align="left">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/books-stack-light.png" id="header-light" width="55%" /> </a> <!-- light mode -->
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="55%" /> </a> <!-- dark mode -->
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/books-stack-light.png" id="header-light" width="54%" align="left" /> </a> <!-- light mode -->
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="54%" align="left" /> </a> <!-- dark mode -->
 </p>
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
