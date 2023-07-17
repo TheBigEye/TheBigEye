@@ -16,14 +16,6 @@
   <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="55%" /> </a> <!-- dark mode -->
 </p>
 
-<a href="https://github.com/TheBigEye#gh-light-mode-only">
-    <img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/1a529295-05ac-49c9-8517-71a2c738eea6" />
-</a>
-<a href="https://github.com/TheBigEye#gh-dark-mode-only">
-    <img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/cb1f8800-e827-4e43-b854-eafffc446b4f" />
-</a>
-
-
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on **[Aircraft](https://github.com/TheBigEye/Aircraft)** and **[Python OS](https://github.com/TheBigEye/Python-OS)**.
 - 🌱 I’m currently learning **[Python](https://github.com/topics/python)**, **[Java](https://github.com/topics/java)**, **[C/C++](https://github.com/topics/cpp)**, **[OS](https://github.com/topics/operating-system)** and **[Games](https://github.com/topics/game-engine)** development.
