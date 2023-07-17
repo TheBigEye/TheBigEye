@@ -2,8 +2,8 @@
 
 <!-- Header -->   
 <p align="center">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="Assets/Header/Light.svg" alt="Nice lightning!" id="header-light" width="100%" /> </a> <!-- light mode -->
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="Assets/Header/Dark.svg" alt="Too dark!!" id="header-dark" width="100%" /> </a> <!-- dark mode -->
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/header/header-light.svg" alt="Nice lightning!" id="header-light" width="100%" /> </a> <!-- light mode -->
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/header/header-dark.svg" alt="Too dark!!" id="header-dark" width="100%" /> </a> <!-- dark mode -->
 </p>
 
 <!-- Views -->
@@ -11,6 +11,10 @@
      <a href="https://github.com/TheBigEye" style="text-shadow: 2px 2px 2px #333;"> <img src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" /> </a>
 </p>
 
+<p align="left">
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/books-stack-light.png" id="header-light" width="55%" /> </a> <!-- light mode -->
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/books-stack-dark.png" id="header-dark" width="55%" /> </a> <!-- dark mode -->
+</p>
 
 <a href="https://github.com/TheBigEye#gh-light-mode-only">
     <img width="55%" align="left" src="https://github.com/TheBigEye/TheBigEye/assets/63316583/1a529295-05ac-49c9-8517-71a2c738eea6" />
