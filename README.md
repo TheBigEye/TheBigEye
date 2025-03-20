@@ -22,7 +22,7 @@
 - 👀 I am focused on the development of **[Games](https://github.com/topics/game-engine)**, **[Operating Systems](https://github.com/topics/osdev)**, and **[IA](https://github.com/topics/ai)**.
 - 🌱 I’m currently learning **[Rust](https://github.com/topics/rust)** and **[COBOL](https://github.com/topics/cobol)** for fun.
 - 👯 I’m currently collaborating on **[Minicraft+](https://github.com/MinicraftPlus/minicraft-plus-revived)**.
-- ⚡ Fun fact, I love **[Assembly Language](https://github.com/topics/assembly-language)**, is faster and sometimes easy to learn.
+- ⚡ Fun fact, I love **[Assembly](https://github.com/topics/assembly-language)**, is faster and sometimes easy to learn.
 - 🎨 **Green** is my favorite color.
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
