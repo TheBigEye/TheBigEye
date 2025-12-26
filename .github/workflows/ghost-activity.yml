@@ -34,7 +34,7 @@ jobs:
           # ║                                          🎨 PIXEL ART CANVAS                                               ║
           # ║                                                                                                            ║
           # ║  📐 Dimensions: 53 columns × 7 rows (53 weeks × 7 days)                                                    ║
-          # ║  🎯 Values: 0 = empty (not commits) | 1 = coloured pixel (1-6 commits random)                             ║
+          # ║  🎯 Values: 0 = empty (not commits) | 1 = coloured pixel (1-6 commits random)                              ║
           # ║                                                                                                            ║
           # ║  📅 Las filas representan días de la semana:                                                               ║
           # ║     Fila 1 = Domingo                                                                                       ║
@@ -62,43 +62,6 @@ jobs:
           1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
           CANVAS
 
-          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
-          #  ⚡ OTROS DISEÑOS DE EJEMPLO (descomenta el que quieras usar)
-          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
-          
-          # 💖 Corazón
-          # read -r -d '' PIXEL_ART << 'CANVAS' || true
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # CANVAS
-
-          # 👻 Fantasma
-          # read -r -d '' PIXEL_ART << 'CANVAS' || true
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-          # CANVAS
-
-          # 🌊 Onda continua
-          # read -r -d '' PIXEL_ART << 'CANVAS' || true
-          # 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0
-          # 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0
-          # 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0
-          # 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0
-          # 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
-          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
-          # CANVAS
-
           # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
           #  🔧 LÓGICA DEL WORKFLOW (no necesitas modificar nada debajo de esta línea)
           # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -110,7 +73,7 @@ jobs:
           echo ""
           
           # Convertir el arte a un array
-          PIXELS=($PIXEL_ART)
+          IFS=' ' read -r -a PIXELS <<< "$(echo "$PIXEL_ART" | tr '\n' ' ')"
           TOTAL_PIXELS=${#PIXELS[@]}
           EXPECTED_PIXELS=$((53 * 7))  # 371 pixels
           
@@ -129,19 +92,17 @@ jobs:
           # 📅 Calcular qué día del año es hoy
           # ──────────────────────────────────────────────────────────────────
           
-          # Fecha de inicio (primer domingo del año o inicio del gráfico de GitHub)
           YEAR=$(date +%Y)
           START_DATE="${YEAR}-01-01"
           
           # Ajustar al primer domingo
-          START_DOW=$(date -d "$START_DATE" +%w 2>/dev/null || date -j -f "%Y-%m-%d" "$START_DATE" +%w)
+          START_DOW=$(date -d "$START_DATE" +%w)
           if [ "$START_DOW" -ne 0 ]; then
             DAYS_TO_SUNDAY=$((7 - START_DOW))
-            START_DATE=$(date -d "$START_DATE + $DAYS_TO_SUNDAY days" +%Y-%m-%d 2>/dev/null || \
-                         date -j -v+${DAYS_TO_SUNDAY}d -f "%Y-%m-%d" "$START_DATE" +%Y-%m-%d)
+            START_DATE=$(date -d "$START_DATE + $DAYS_TO_SUNDAY days" +%Y-%m-%d)
           fi
           
-          START_EPOCH=$(date -d "$START_DATE" +%s 2>/dev/null || date -j -f "%Y-%m-%d" "$START_DATE" +%s)
+          START_EPOCH=$(date -d "$START_DATE" +%s)
           CURRENT_EPOCH=$(date +%s)
           DAYS_ELAPSED=$(( (CURRENT_EPOCH - START_EPOCH) / 86400 ))
           
@@ -160,7 +121,130 @@ jobs:
           echo "   → Índice del pixel: $PIXEL_INDEX"
           echo ""
           
+          # ──────────────────────────────────────────────────────────────────
+          # 👁️ Modo Preview - MUESTRA TODO EL BANNER
+          # ──────────────────────────────────────────────────────────────────
+          
+          if [ "$PREVIEW_ONLY" = "true" ]; then
+            echo "👁️ MODO PREVIEW - No se realizarán commits"
+            echo ""
+            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+            echo "                                    🎨 VISTA COMPLETA DEL CANVAS (53 semanas × 7 días)"
+            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+            echo ""
+            
+            # Header con números de semana (cada 5 semanas)
+            printf "        "
+            for week in $(seq 0 52); do
+              if [ $((week % 5)) -eq 0 ]; then
+                printf "%-5s" "$week"
+              else
+                printf " "
+              fi
+            done
+            echo ""
+            
+            # Línea separadora superior
+            printf "       ┌"
+            for week in $(seq 0 52); do
+              printf "─"
+            done
+            printf "┐\n"
+            
+            # Días de la semana
+            DAYS=("Dom" "Lun" "Mar" "Mié" "Jue" "Vie" "Sáb")
+            
+            for row in 0 1 2 3 4 5 6; do
+              printf "  %s │" "${DAYS[$row]}"
+              
+              for week in $(seq 0 52); do
+                idx=$((week * 7 + row))
+                if [ "$idx" -lt "$TOTAL_PIXELS" ]; then
+                  if [ "$idx" -eq "$PIXEL_INDEX" ]; then
+                    # Día actual - marcador especial
+                    printf "🔵"
+                  elif [ "${PIXELS[$idx]}" -eq 1 ]; then
+                    printf "🟩"
+                  else
+                    printf "⬜"
+                  fi
+                else
+                  printf " "
+                fi
+              done
+              printf "│\n"
+            done
+            
+            # Línea separadora inferior
+            printf "       └"
+            for week in $(seq 0 52); do
+              printf "─"
+            done
+            printf "┘\n"
+            
+            echo ""
+            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+            echo ""
+            echo "📊 LEYENDA:"
+            echo "   🔵 = Día actual (Semana $CURRENT_WEEK, Día $CURRENT_DAY)"
+            echo "   🟩 = Pixel activo (generará commits)"
+            echo "   ⬜ = Pixel vacío (sin commits)"
+            echo ""
+            echo "📈 ESTADÍSTICAS:"
+            
+            # Contar pixels activos
+            ACTIVE_PIXELS=0
+            EMPTY_PIXELS=0
+            COMPLETED_ACTIVE=0
+            COMPLETED_EMPTY=0
+            REMAINING_ACTIVE=0
+            
+            for i in $(seq 0 $((TOTAL_PIXELS - 1))); do
+              if [ "${PIXELS[$i]}" -eq 1 ]; then
+                ACTIVE_PIXELS=$((ACTIVE_PIXELS + 1))
+                if [ "$i" -lt "$PIXEL_INDEX" ]; then
+                  COMPLETED_ACTIVE=$((COMPLETED_ACTIVE + 1))
+                elif [ "$i" -gt "$PIXEL_INDEX" ]; then
+                  REMAINING_ACTIVE=$((REMAINING_ACTIVE + 1))
+                fi
+              else
+                EMPTY_PIXELS=$((EMPTY_PIXELS + 1))
+                if [ "$i" -lt "$PIXEL_INDEX" ]; then
+                  COMPLETED_EMPTY=$((COMPLETED_EMPTY + 1))
+                fi
+              fi
+            done
+            
+            TOTAL_COMPLETED=$((COMPLETED_ACTIVE + COMPLETED_EMPTY))
+            if [ "$PIXEL_INDEX" -lt "$TOTAL_PIXELS" ]; then
+              TOTAL_COMPLETED=$((TOTAL_COMPLETED + 1))
+            fi
+            PROGRESS=$((TOTAL_COMPLETED * 100 / TOTAL_PIXELS))
+            
+            echo "   → Total de pixels: $TOTAL_PIXELS"
+            echo "   → Pixels activos (🟩): $ACTIVE_PIXELS"
+            echo "   → Pixels vacíos (⬜): $EMPTY_PIXELS"
+            echo "   → Días completados: $TOTAL_COMPLETED / $TOTAL_PIXELS ($PROGRESS%)"
+            echo "   → Días activos restantes: $REMAINING_ACTIVE"
+            echo ""
+            
+            # Barra de progreso visual
+            printf "   Progreso: ["
+            FILLED=$((PROGRESS / 2))
+            EMPTY_BAR=$((50 - FILLED))
+            for i in $(seq 1 $FILLED); do printf "█"; done
+            for i in $(seq 1 $EMPTY_BAR); do printf "░"; done
+            printf "] %d%%\n" "$PROGRESS"
+            
+            echo ""
+            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+            exit 0
+          fi
+          
+          # ──────────────────────────────────────────────────────────────────
           # Verificar que estamos dentro del rango
+          # ──────────────────────────────────────────────────────────────────
+          
           if [ "$PIXEL_INDEX" -ge "$TOTAL_PIXELS" ] || [ "$PIXEL_INDEX" -lt 0 ]; then
             echo "📍 Fuera del rango del canvas. Nada que hacer hoy."
             exit 0
@@ -190,31 +274,31 @@ jobs:
           # 🎲 Generar número aleatorio de commits (1-5, raramente 6)
           # ──────────────────────────────────────────────────────────────────
           
-          # 85% probabilidad: 1-5 commits
-          # 15% probabilidad: 6 commits
-          RANDOM_SEED=$(($(date +%s%N 2>/dev/null || echo $(($(date +%s) * $$))) % 100))
+          RANDOM_SEED=$(( $(date +%s) + $$ ))
+          RANDOM=$RANDOM_SEED
           
-          if [ "$RANDOM_SEED" -lt 85 ]; then
-            # 1-5 commits (distribución normal)
-            DAILY_COMMITS=$((1 + (RANDOM_SEED % 5)))
+          RAND_VAL=$((RANDOM % 100))
+          
+          if [ "$RAND_VAL" -lt 85 ]; then
+            DAILY_COMMITS=$(( (RANDOM % 5) + 1 ))
           else
-            # 6 commits (raro)
             DAILY_COMMITS=6
           fi
           
-          # Dividir commits entre las ejecuciones del día (cada 4 horas = 6 ejecuciones)
           HOUR=$(date +%H)
           RUN_INDEX=$((HOUR / 4))  # 0-5
           
-          # Distribuir commits de manera pseudo-aleatoria entre ejecuciones
-          COMMITS_PER_RUN=$(( (DAILY_COMMITS + RUN_INDEX) / 6 ))
+          # Distribuir commits entre ejecuciones
+          BASE_COMMITS=$((DAILY_COMMITS / 6))
           REMAINDER=$((DAILY_COMMITS % 6))
           
           if [ "$RUN_INDEX" -lt "$REMAINDER" ]; then
-            COMMITS_PER_RUN=$((COMMITS_PER_RUN + 1))
+            COMMITS_PER_RUN=$((BASE_COMMITS + 1))
+          else
+            COMMITS_PER_RUN=$BASE_COMMITS
           fi
           
-          # Asegurar al menos 1 commit si estamos en una ejecución activa
+          # Asegurar al menos 1 commit en la primera ejecución del día
           if [ "$COMMITS_PER_RUN" -lt 1 ] && [ "$RUN_INDEX" -eq 0 ]; then
             COMMITS_PER_RUN=1
           fi
@@ -224,48 +308,6 @@ jobs:
           echo "   → Ejecución actual: $((RUN_INDEX + 1)) de 6"
           echo "   → Commits esta ejecución: $COMMITS_PER_RUN"
           echo ""
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 👁️ Modo Preview
-          # ──────────────────────────────────────────────────────────────────
-          
-          if [ "$PREVIEW_ONLY" = "true" ]; then
-            echo "👁️ MODO PREVIEW - No se realizarán commits"
-            echo ""
-            echo "Vista previa del canvas (próximas 4 semanas):"
-            echo ""
-            
-            for row in 0 1 2 3 4 5 6; do
-              case $row in
-                0) printf "  Dom: " ;;
-                1) printf "  Lun: " ;;
-                2) printf "  Mar: " ;;
-                3) printf "  Mié: " ;;
-                4) printf "  Jue: " ;;
-                5) printf "  Vie: " ;;
-                6) printf "  Sáb: " ;;
-              esac
-              
-              for week in $(seq $CURRENT_WEEK $((CURRENT_WEEK + 3))); do
-                idx=$((week * 7 + row))
-                if [ "$idx" -lt "$TOTAL_PIXELS" ]; then
-                  if [ "${PIXELS[$idx]}" -eq 1 ]; then
-                    if [ "$idx" -eq "$PIXEL_INDEX" ]; then
-                      printf "🔵"  # Día actual
-                    else
-                      printf "🟩"
-                    fi
-                  else
-                    printf "⬜"
-                  fi
-                fi
-              done
-              echo ""
-            done
-            echo ""
-            echo "🔵 = Hoy | 🟩 = Activo | ⬜ = Vacío"
-            exit 0
-          fi
           
           # ──────────────────────────────────────────────────────────────────
           # 🔨 Generar commits
@@ -279,10 +321,8 @@ jobs:
           echo "🔨 Generando commits..."
           echo ""
           
-          # Crear directorio para los commits
           mkdir -p .ghost
           
-          # Mensajes creativos para los commits
           MESSAGES=(
             "👻 Spectral update"
             "🌙 Midnight whispers"
@@ -304,16 +344,13 @@ jobs:
             MSG_INDEX=$((RANDOM % ${#MESSAGES[@]}))
             MESSAGE="${MESSAGES[$MSG_INDEX]}"
             
-            # Actualizar log
             echo "[$TIMESTAMP] Pixel [$CURRENT_WEEK,$CURRENT_DAY] | ID: $RANDOM_ID" >> .ghost/activity.log
             
-            # Hacer commit
             git add .ghost/
-            git commit -m "$MESSAGE" -m "🎨 Pixel: Week $CURRENT_WEEK, Day $CURRENT_DAY" --allow-empty 2>/dev/null || true
+            git commit -m "$MESSAGE" -m "🎨 Pixel: Week $CURRENT_WEEK, Day $CURRENT_DAY" --allow-empty
             
             echo "   ✓ Commit $i/$COMMITS_PER_RUN: $MESSAGE"
             
-            # Pequeña pausa entre commits
             sleep 1
           done
           
