@@ -34,7 +34,7 @@
           <img
                width="41%"
                align="center"
-               src="https://github-readme-stats.vercel.app/api/?username=TheBigEye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
+               src="https://github-readme-stats-fast.vercel.app/api/?username=TheBigEye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
@@ -43,7 +43,7 @@
           <img
                width="41%"
                align="center"
-               src="https://github-readme-stats.vercel.app/api/?username=TheBigEye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
+               src="https://github-readme-stats-fast.vercel.app/api/?username=TheBigEye&show_icons=true&bg_color=0000&title_color=cccccc&text_color=a0a0a0&icon_color=aaaaaa&custom_title=&hide_border=true"
                alt="thebigeye"
           />
      </a>
