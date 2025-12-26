@@ -1,170 +1,328 @@
-# .github/workflows/ghost-art.yml
-name: Ghost Activity Art Generator
+name: 👻 My Ghost
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Cada 4 horas para distribuir commits
+    - cron: '0 */4 * * *'  # Each 4 hours...
   workflow_dispatch:
     inputs:
-      force_level:
-        description: 'Forzar nivel de actividad (0-5)'
-        required: false
-        default: '-1'
+      preview:
+        description: '👁️ Show my cooooommiiits'
+        type: boolean
+        default: false
 
 jobs:
   generate-activity:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
+      - name: 👻 Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Configure Git
+      - name: ⚙️ Configure Git
         run: |
           git config user.name "TheBigEye"
           git config user.email "thebigeyedev@gmail.com"
 
-      - name: Generate Ghost Commits
+      - name: 🎨 Generate Art
         env:
-          FORCE_LEVEL: ${{ github.event.inputs.force_level }}
+          PREVIEW_ONLY: ${{ github.event.inputs.preview }}
         run: |
-          # ============================================================
-          #                    🎨 MATRIZ DE ARTE
-          # ============================================================
-          # Cada fila = 1 semana (7 días: Dom, Lun, Mar, Mié, Jue, Vie, Sáb)
-          # Diseña tu patrón aquí - esto dibujará algo en tu gráfico
-          # ============================================================
+          # ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+          # ║                                          🎨 PIXEL ART CANVAS                                               ║
+          # ║                                                                                                            ║
+          # ║  📐 Dimensions: 53 columns × 7 rows (53 weeks × 7 days)                                                    ║
+          # ║  🎯 Values: 0 = empty (not commits) | 1 = coloured pixel (1-6 commits random)                             ║
+          # ║                                                                                                            ║
+          # ║  📅 Las filas representan días de la semana:                                                               ║
+          # ║     Fila 1 = Domingo                                                                                       ║
+          # ║     Fila 2 = Lunes                                                                                         ║
+          # ║     Fila 3 = Martes                                                                                        ║
+          # ║     Fila 4 = Miércoles                                                                                     ║
+          # ║     Fila 5 = Jueves                                                                                        ║
+          # ║     Fila 6 = Viernes                                                                                       ║
+          # ║     Fila 7 = Sábado                                                                                        ║
+          # ║                                                                                                            ║
+          # ║  💡 Tip: Diseña tu arte en un editor de texto y copia aquí                                                 ║
+          # ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
           
-          # Ejemplo: Patrón de onda
-          set +e
-          read -r -d '' PATTERN << 'EOF'
-          0 1 2 3 4 5 4
-          3 2 1 0 1 2 3
-          4 5 4 3 2 1 0
-          1 2 3 4 5 4 3
-          2 1 0 1 2 3 4
-          5 4 3 2 1 0 1
-          2 3 4 5 4 3 2
-          1 0 1 2 3 4 5
-          EOF
-          set -e
+          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+          #  🖼️ TU DISEÑO AQUÍ - Ejemplo: Texto "HELLO GITHUB"
+          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+          
+          read -r -d '' PIXEL_ART << 'CANVAS' || true
+          1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+          1 0 0 1 0 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
+          1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1
+          1 0 0 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 0 0 0 0 1
+          1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1
+          1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
+          1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+          CANVAS
 
-          # Ejemplo alternativo: Letras "HI"
-          # read -r -d '' PATTERN << 'EOF'
-          # 5 0 5 0 5 5 5
-          # 5 0 5 0 0 5 0
-          # 5 5 5 0 0 5 0
-          # 5 0 5 0 0 5 0
-          # 5 0 5 0 5 5 5
-          # 0 0 0 0 0 0 0
-          # EOF
+          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+          #  ⚡ OTROS DISEÑOS DE EJEMPLO (descomenta el que quieras usar)
+          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+          
+          # 💖 Corazón
+          # read -r -d '' PIXEL_ART << 'CANVAS' || true
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # CANVAS
 
-          # Ejemplo: Corazón
-          # read -r -d '' PATTERN << 'EOF'
-          # 0 2 4 0 4 2 0
-          # 2 5 5 4 5 5 2
-          # 4 5 5 5 5 5 4
-          # 0 4 5 5 5 4 0
-          # 0 0 4 5 4 0 0
-          # 0 0 0 4 0 0 0
-          # 0 0 0 0 0 0 0
-          # EOF
+          # 👻 Fantasma
+          # read -r -d '' PIXEL_ART << 'CANVAS' || true
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+          # CANVAS
+
+          # 🌊 Onda continua
+          # read -r -d '' PIXEL_ART << 'CANVAS' || true
+          # 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0
+          # 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0
+          # 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0
+          # 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0
+          # 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+          # 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+          # CANVAS
+
+          # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+          #  🔧 LÓGICA DEL WORKFLOW (no necesitas modificar nada debajo de esta línea)
+          # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
           
-          # Convertir patrón a array
-          ACTIVITY_PATTERN=($PATTERN)
+          echo ""
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║           👻 GHOST ACTIVITY ART GENERATOR 👻                 ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
+          echo ""
           
-          # Calcular posición en el patrón
-          # Fecha de inicio del patrón (ajusta esta fecha)
-          START_DATE="2025-01-01"
+          # Convertir el arte a un array
+          PIXELS=($PIXEL_ART)
+          TOTAL_PIXELS=${#PIXELS[@]}
+          EXPECTED_PIXELS=$((53 * 7))  # 371 pixels
+          
+          echo "📊 Validación del canvas:"
+          echo "   → Pixels encontrados: $TOTAL_PIXELS"
+          echo "   → Pixels esperados: $EXPECTED_PIXELS"
+          
+          if [ "$TOTAL_PIXELS" -ne "$EXPECTED_PIXELS" ]; then
+            echo ""
+            echo "⚠️  ¡Advertencia! El canvas no tiene las dimensiones correctas (53×7)"
+            echo "   Se usarán los pixels disponibles..."
+          fi
+          echo ""
+          
+          # ──────────────────────────────────────────────────────────────────
+          # 📅 Calcular qué día del año es hoy
+          # ──────────────────────────────────────────────────────────────────
+          
+          # Fecha de inicio (primer domingo del año o inicio del gráfico de GitHub)
+          YEAR=$(date +%Y)
+          START_DATE="${YEAR}-01-01"
+          
+          # Ajustar al primer domingo
+          START_DOW=$(date -d "$START_DATE" +%w 2>/dev/null || date -j -f "%Y-%m-%d" "$START_DATE" +%w)
+          if [ "$START_DOW" -ne 0 ]; then
+            DAYS_TO_SUNDAY=$((7 - START_DOW))
+            START_DATE=$(date -d "$START_DATE + $DAYS_TO_SUNDAY days" +%Y-%m-%d 2>/dev/null || \
+                         date -j -v+${DAYS_TO_SUNDAY}d -f "%Y-%m-%d" "$START_DATE" +%Y-%m-%d)
+          fi
+          
           START_EPOCH=$(date -d "$START_DATE" +%s 2>/dev/null || date -j -f "%Y-%m-%d" "$START_DATE" +%s)
           CURRENT_EPOCH=$(date +%s)
           DAYS_ELAPSED=$(( (CURRENT_EPOCH - START_EPOCH) / 86400 ))
           
-          PATTERN_LENGTH=${#ACTIVITY_PATTERN[@]}
-          TODAY_INDEX=$(( DAYS_ELAPSED % PATTERN_LENGTH ))
+          # Calcular semana y día
+          CURRENT_WEEK=$((DAYS_ELAPSED / 7))
+          CURRENT_DAY=$((DAYS_ELAPSED % 7))
           
-          # Verificar si se forzó un nivel
-          if [ "$FORCE_LEVEL" != "-1" ] && [ -n "$FORCE_LEVEL" ]; then
-            ACTIVITY_LEVEL=$FORCE_LEVEL
-            echo "⚡ Nivel forzado: $ACTIVITY_LEVEL"
-          else
-            ACTIVITY_LEVEL=${ACTIVITY_PATTERN[$TODAY_INDEX]}
-          fi
+          # Índice en el array (columna * 7 + fila)
+          PIXEL_INDEX=$((CURRENT_WEEK * 7 + CURRENT_DAY))
           
-          echo "📅 Días desde inicio: $DAYS_ELAPSED"
-          echo "📍 Índice en patrón: $TODAY_INDEX / $PATTERN_LENGTH"
-          echo "📊 Nivel de actividad: $ACTIVITY_LEVEL"
+          echo "📅 Información de fecha:"
+          echo "   → Fecha inicio gráfico: $START_DATE"
+          echo "   → Días transcurridos: $DAYS_ELAPSED"
+          echo "   → Semana actual: $CURRENT_WEEK (de 53)"
+          echo "   → Día de la semana: $CURRENT_DAY (0=Dom, 6=Sáb)"
+          echo "   → Índice del pixel: $PIXEL_INDEX"
+          echo ""
           
-          # Mapa de commits por nivel
-          declare -A COMMIT_MAP
-          COMMIT_MAP[0]="0 0"
-          COMMIT_MAP[1]="1 3"
-          COMMIT_MAP[2]="4 7"
-          COMMIT_MAP[3]="8 12"
-          COMMIT_MAP[4]="13 18"
-          COMMIT_MAP[5]="19 25"
-          
-          # Obtener rango de commits
-          RANGE=(${COMMIT_MAP[$ACTIVITY_LEVEL]})
-          MIN_COMMITS=${RANGE[0]}
-          MAX_COMMITS=${RANGE[1]}
-          
-          if [ "$MAX_COMMITS" -eq 0 ]; then
-            echo "😴 Sin actividad programada para hoy"
+          # Verificar que estamos dentro del rango
+          if [ "$PIXEL_INDEX" -ge "$TOTAL_PIXELS" ] || [ "$PIXEL_INDEX" -lt 0 ]; then
+            echo "📍 Fuera del rango del canvas. Nada que hacer hoy."
             exit 0
           fi
           
-          # Calcular commits con algo de variación
-          RANDOM_SEED=$(($(date +%s) + $$))
-          NUM_COMMITS=$((MIN_COMMITS + (RANDOM_SEED % (MAX_COMMITS - MIN_COMMITS + 1))))
+          # Obtener el valor del pixel actual
+          PIXEL_VALUE=${PIXELS[$PIXEL_INDEX]}
           
-          # Dividir entre ejecuciones del día (si corre cada 4 horas = 6 veces)
-          HOUR=$(date +%H)
-          RUN_INDEX=$((HOUR / 4))
-          COMMITS_THIS_RUN=$(( (NUM_COMMITS + RUN_INDEX) / 6 ))
+          echo "🎨 Pixel actual:"
+          echo "   → Valor: $PIXEL_VALUE"
           
-          if [ "$COMMITS_THIS_RUN" -lt 1 ] && [ "$NUM_COMMITS" -gt 0 ]; then
-            COMMITS_THIS_RUN=1
+          # ──────────────────────────────────────────────────────────────────
+          # 🎯 Determinar acción basada en el pixel
+          # ──────────────────────────────────────────────────────────────────
+          
+          if [ "$PIXEL_VALUE" -eq 0 ]; then
+            echo "   → Estado: ⬜ Vacío (sin commits)"
+            echo ""
+            echo "😴 No hay actividad programada para hoy."
+            exit 0
           fi
           
-          echo "🔨 Generando $COMMITS_THIS_RUN commits (de $NUM_COMMITS totales para hoy)..."
+          echo "   → Estado: 🟩 Activo (generando commits)"
+          echo ""
           
-          # Directorio para commits
+          # ──────────────────────────────────────────────────────────────────
+          # 🎲 Generar número aleatorio de commits (1-5, raramente 6)
+          # ──────────────────────────────────────────────────────────────────
+          
+          # 85% probabilidad: 1-5 commits
+          # 15% probabilidad: 6 commits
+          RANDOM_SEED=$(($(date +%s%N 2>/dev/null || echo $(($(date +%s) * $$))) % 100))
+          
+          if [ "$RANDOM_SEED" -lt 85 ]; then
+            # 1-5 commits (distribución normal)
+            DAILY_COMMITS=$((1 + (RANDOM_SEED % 5)))
+          else
+            # 6 commits (raro)
+            DAILY_COMMITS=6
+          fi
+          
+          # Dividir commits entre las ejecuciones del día (cada 4 horas = 6 ejecuciones)
+          HOUR=$(date +%H)
+          RUN_INDEX=$((HOUR / 4))  # 0-5
+          
+          # Distribuir commits de manera pseudo-aleatoria entre ejecuciones
+          COMMITS_PER_RUN=$(( (DAILY_COMMITS + RUN_INDEX) / 6 ))
+          REMAINDER=$((DAILY_COMMITS % 6))
+          
+          if [ "$RUN_INDEX" -lt "$REMAINDER" ]; then
+            COMMITS_PER_RUN=$((COMMITS_PER_RUN + 1))
+          fi
+          
+          # Asegurar al menos 1 commit si estamos en una ejecución activa
+          if [ "$COMMITS_PER_RUN" -lt 1 ] && [ "$RUN_INDEX" -eq 0 ]; then
+            COMMITS_PER_RUN=1
+          fi
+          
+          echo "🎲 Commits calculados:"
+          echo "   → Total del día: $DAILY_COMMITS"
+          echo "   → Ejecución actual: $((RUN_INDEX + 1)) de 6"
+          echo "   → Commits esta ejecución: $COMMITS_PER_RUN"
+          echo ""
+          
+          # ──────────────────────────────────────────────────────────────────
+          # 👁️ Modo Preview
+          # ──────────────────────────────────────────────────────────────────
+          
+          if [ "$PREVIEW_ONLY" = "true" ]; then
+            echo "👁️ MODO PREVIEW - No se realizarán commits"
+            echo ""
+            echo "Vista previa del canvas (próximas 4 semanas):"
+            echo ""
+            
+            for row in 0 1 2 3 4 5 6; do
+              case $row in
+                0) printf "  Dom: " ;;
+                1) printf "  Lun: " ;;
+                2) printf "  Mar: " ;;
+                3) printf "  Mié: " ;;
+                4) printf "  Jue: " ;;
+                5) printf "  Vie: " ;;
+                6) printf "  Sáb: " ;;
+              esac
+              
+              for week in $(seq $CURRENT_WEEK $((CURRENT_WEEK + 3))); do
+                idx=$((week * 7 + row))
+                if [ "$idx" -lt "$TOTAL_PIXELS" ]; then
+                  if [ "${PIXELS[$idx]}" -eq 1 ]; then
+                    if [ "$idx" -eq "$PIXEL_INDEX" ]; then
+                      printf "🔵"  # Día actual
+                    else
+                      printf "🟩"
+                    fi
+                  else
+                    printf "⬜"
+                  fi
+                fi
+              done
+              echo ""
+            done
+            echo ""
+            echo "🔵 = Hoy | 🟩 = Activo | ⬜ = Vacío"
+            exit 0
+          fi
+          
+          # ──────────────────────────────────────────────────────────────────
+          # 🔨 Generar commits
+          # ──────────────────────────────────────────────────────────────────
+          
+          if [ "$COMMITS_PER_RUN" -lt 1 ]; then
+            echo "⏭️ Esta ejecución no tiene commits asignados. ¡Hasta la próxima!"
+            exit 0
+          fi
+          
+          echo "🔨 Generando commits..."
+          echo ""
+          
+          # Crear directorio para los commits
           mkdir -p .ghost
           
-          # Mensajes variados para los commits
+          # Mensajes creativos para los commits
           MESSAGES=(
             "👻 Spectral update"
-            "🌙 Midnight maintenance"
+            "🌙 Midnight whispers"
             "✨ Ethereal enhancement"
-            "🔮 Phantom fix"
-            "💫 Ghost optimization"
-            "🌟 Astral adjustment"
-            "🎭 Shadow sync"
-            "🦇 Nocturnal commit"
+            "🔮 Phantom patch"
+            "💫 Cosmic adjustment"
+            "🌟 Stellar sync"
+            "🎭 Shadow dance"
+            "🦇 Night flight"
+            "🌌 Void optimization"
+            "👁️ Watchful update"
+            "🕯️ Candlelight commit"
+            "🌑 Dark side fix"
           )
           
-          for i in $(seq 1 $COMMITS_THIS_RUN); do
-            TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
-            RANDOM_ID=$(head /dev/urandom | tr -dc 'a-f0-9' | head -c 8)
+          for i in $(seq 1 $COMMITS_PER_RUN); do
+            TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S")
+            RANDOM_ID=$(head /dev/urandom | tr -dc 'a-f0-9' | head -c 6)
             MSG_INDEX=$((RANDOM % ${#MESSAGES[@]}))
             MESSAGE="${MESSAGES[$MSG_INDEX]}"
             
-            # Actualizar archivo
-            echo "$TIMESTAMP | $RANDOM_ID | Level: $ACTIVITY_LEVEL" >> .ghost/activity.log
+            # Actualizar log
+            echo "[$TIMESTAMP] Pixel [$CURRENT_WEEK,$CURRENT_DAY] | ID: $RANDOM_ID" >> .ghost/activity.log
             
-            # Commit
+            # Hacer commit
             git add .ghost/
-            git commit -m "$MESSAGE #$RANDOM_ID" --allow-empty-message --allow-empty 2>/dev/null || true
+            git commit -m "$MESSAGE" -m "🎨 Pixel: Week $CURRENT_WEEK, Day $CURRENT_DAY" --allow-empty 2>/dev/null || true
             
-            sleep 2
+            echo "   ✓ Commit $i/$COMMITS_PER_RUN: $MESSAGE"
+            
+            # Pequeña pausa entre commits
+            sleep 1
           done
           
-          echo "✅ Completado: $COMMITS_THIS_RUN commits generados"
+          echo ""
+          echo "╔══════════════════════════════════════════════════════════════╗"
+          echo "║  ✅ ¡Completado! $COMMITS_PER_RUN commits generados          ║"
+          echo "╚══════════════════════════════════════════════════════════════╝"
 
-      - name: Push changes
+      - name: 🚀 Push changes
+        if: ${{ github.event.inputs.preview != 'true' }}
         run: |
-          git push origin HEAD 2>/dev/null || echo "Nothing to push"
+          git push origin HEAD 2>/dev/null || echo "📭 Nothing to push"
