@@ -1,0 +1,168 @@
+# .github/workflows/ghost-art.yml
+name: Ghost Activity Art Generator
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Cada 4 horas para distribuir commits
+  workflow_dispatch:
+    inputs:
+      force_level:
+        description: 'Forzar nivel de actividad (0-5)'
+        required: false
+        default: '-1'
+
+jobs:
+  generate-activity:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "TheBigEye"
+          git config user.email "thebigeyedev@gmail.com"
+
+      - name: Generate Ghost Commits
+        env:
+          FORCE_LEVEL: ${{ github.event.inputs.force_level }}
+        run: |
+          # ============================================================
+          #                    🎨 MATRIZ DE ARTE
+          # ============================================================
+          # Cada fila = 1 semana (7 días: Dom, Lun, Mar, Mié, Jue, Vie, Sáb)
+          # Diseña tu patrón aquí - esto dibujará algo en tu gráfico
+          # ============================================================
+          
+          # Ejemplo: Patrón de onda
+          read -r -d '' PATTERN << 'EOF'
+          0 1 2 3 4 5 4
+          3 2 1 0 1 2 3
+          4 5 4 3 2 1 0
+          1 2 3 4 5 4 3
+          2 1 0 1 2 3 4
+          5 4 3 2 1 0 1
+          2 3 4 5 4 3 2
+          1 0 1 2 3 4 5
+          EOF
+
+          # Ejemplo alternativo: Letras "HI"
+          # read -r -d '' PATTERN << 'EOF'
+          # 5 0 5 0 5 5 5
+          # 5 0 5 0 0 5 0
+          # 5 5 5 0 0 5 0
+          # 5 0 5 0 0 5 0
+          # 5 0 5 0 5 5 5
+          # 0 0 0 0 0 0 0
+          # EOF
+
+          # Ejemplo: Corazón
+          # read -r -d '' PATTERN << 'EOF'
+          # 0 2 4 0 4 2 0
+          # 2 5 5 4 5 5 2
+          # 4 5 5 5 5 5 4
+          # 0 4 5 5 5 4 0
+          # 0 0 4 5 4 0 0
+          # 0 0 0 4 0 0 0
+          # 0 0 0 0 0 0 0
+          # EOF
+          
+          # Convertir patrón a array
+          ACTIVITY_PATTERN=($PATTERN)
+          
+          # Calcular posición en el patrón
+          # Fecha de inicio del patrón (ajusta esta fecha)
+          START_DATE="2025-01-01"
+          START_EPOCH=$(date -d "$START_DATE" +%s 2>/dev/null || date -j -f "%Y-%m-%d" "$START_DATE" +%s)
+          CURRENT_EPOCH=$(date +%s)
+          DAYS_ELAPSED=$(( (CURRENT_EPOCH - START_EPOCH) / 86400 ))
+          
+          PATTERN_LENGTH=${#ACTIVITY_PATTERN[@]}
+          TODAY_INDEX=$(( DAYS_ELAPSED % PATTERN_LENGTH ))
+          
+          # Verificar si se forzó un nivel
+          if [ "$FORCE_LEVEL" != "-1" ] && [ -n "$FORCE_LEVEL" ]; then
+            ACTIVITY_LEVEL=$FORCE_LEVEL
+            echo "⚡ Nivel forzado: $ACTIVITY_LEVEL"
+          else
+            ACTIVITY_LEVEL=${ACTIVITY_PATTERN[$TODAY_INDEX]}
+          fi
+          
+          echo "📅 Días desde inicio: $DAYS_ELAPSED"
+          echo "📍 Índice en patrón: $TODAY_INDEX / $PATTERN_LENGTH"
+          echo "📊 Nivel de actividad: $ACTIVITY_LEVEL"
+          
+          # Mapa de commits por nivel
+          declare -A COMMIT_MAP
+          COMMIT_MAP[0]="0 0"
+          COMMIT_MAP[1]="1 3"
+          COMMIT_MAP[2]="4 7"
+          COMMIT_MAP[3]="8 12"
+          COMMIT_MAP[4]="13 18"
+          COMMIT_MAP[5]="19 25"
+          
+          # Obtener rango de commits
+          RANGE=(${COMMIT_MAP[$ACTIVITY_LEVEL]})
+          MIN_COMMITS=${RANGE[0]}
+          MAX_COMMITS=${RANGE[1]}
+          
+          if [ "$MAX_COMMITS" -eq 0 ]; then
+            echo "😴 Sin actividad programada para hoy"
+            exit 0
+          fi
+          
+          # Calcular commits con algo de variación
+          RANDOM_SEED=$(($(date +%s) + $$))
+          NUM_COMMITS=$((MIN_COMMITS + (RANDOM_SEED % (MAX_COMMITS - MIN_COMMITS + 1))))
+          
+          # Dividir entre ejecuciones del día (si corre cada 4 horas = 6 veces)
+          HOUR=$(date +%H)
+          RUN_INDEX=$((HOUR / 4))
+          COMMITS_THIS_RUN=$(( (NUM_COMMITS + RUN_INDEX) / 6 ))
+          
+          if [ "$COMMITS_THIS_RUN" -lt 1 ] && [ "$NUM_COMMITS" -gt 0 ]; then
+            COMMITS_THIS_RUN=1
+          fi
+          
+          echo "🔨 Generando $COMMITS_THIS_RUN commits (de $NUM_COMMITS totales para hoy)..."
+          
+          # Directorio para commits
+          mkdir -p .ghost
+          
+          # Mensajes variados para los commits
+          MESSAGES=(
+            "👻 Spectral update"
+            "🌙 Midnight maintenance"
+            "✨ Ethereal enhancement"
+            "🔮 Phantom fix"
+            "💫 Ghost optimization"
+            "🌟 Astral adjustment"
+            "🎭 Shadow sync"
+            "🦇 Nocturnal commit"
+          )
+          
+          for i in $(seq 1 $COMMITS_THIS_RUN); do
+            TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
+            RANDOM_ID=$(head /dev/urandom | tr -dc 'a-f0-9' | head -c 8)
+            MSG_INDEX=$((RANDOM % ${#MESSAGES[@]}))
+            MESSAGE="${MESSAGES[$MSG_INDEX]}"
+            
+            # Actualizar archivo
+            echo "$TIMESTAMP | $RANDOM_ID | Level: $ACTIVITY_LEVEL" >> .ghost/activity.log
+            
+            # Commit
+            git add .ghost/
+            git commit -m "$MESSAGE #$RANDOM_ID" --allow-empty-message --allow-empty 2>/dev/null || true
+            
+            sleep 2
+          done
+          
+          echo "✅ Completado: $COMMITS_THIS_RUN commits generados"
+
+      - name: Push changes
+        run: |
+          git push origin HEAD 2>/dev/null || echo "Nothing to push"
