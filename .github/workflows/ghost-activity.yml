@@ -39,6 +39,7 @@ jobs:
           # ============================================================
           
           # Ejemplo: Patrón de onda
+          set +e
           read -r -d '' PATTERN << 'EOF'
           0 1 2 3 4 5 4
           3 2 1 0 1 2 3
@@ -49,6 +50,7 @@ jobs:
           2 3 4 5 4 3 2
           1 0 1 2 3 4 5
           EOF
+          set -e
 
           # Ejemplo alternativo: Letras "HI"
           # read -r -d '' PATTERN << 'EOF'
