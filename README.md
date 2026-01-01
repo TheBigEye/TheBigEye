@@ -13,7 +13,8 @@
 
 
 <p align="left">
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="https://github.com/user-attachments/assets/e7bed43d-335f-40e1-817f-961aa37abf6b" id="header-light" width="64%" align="left" alt="logo"/>
+  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/pc-light.png" id="header-light" width="58%" align="left" id="logo-light" />
+  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/pc-dark.png" id="header-light" width="58%" align="left" id="logo-dark" />
 </p>
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
