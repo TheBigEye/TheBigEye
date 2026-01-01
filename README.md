@@ -34,7 +34,7 @@
           <!-- Light mode -->
           <img
                width="48%"
-               align="center"
+               align="right"
                src="https://github-readme-stats-fast.vercel.app/api/?username=TheBigEye&layout=compact&show_icons=true&theme=light&bg_color=0000&custom_title=&hide_border=true"
                alt="thebigeye"
           />
