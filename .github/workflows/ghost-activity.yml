@@ -95,11 +95,11 @@ jobs:
           YEAR=$(date +%Y)
           START_DATE="${YEAR}-01-01"
           
-          # Ajustar al primer domingo
+          # Ajustar al domingo de la semana que contiene el 1 de enero
+          # (igual a como GitHub calcula la primera columna del año)
           START_DOW=$(date -d "$START_DATE" +%w)
           if [ "$START_DOW" -ne 0 ]; then
-            DAYS_TO_SUNDAY=$((7 - START_DOW))
-            START_DATE=$(date -d "$START_DATE + $DAYS_TO_SUNDAY days" +%Y-%m-%d)
+            START_DATE=$(date -d "$START_DATE - $START_DOW days" +%Y-%m-%d)
           fi
           
           START_EPOCH=$(date -d "$START_DATE" +%s)
@@ -110,8 +110,8 @@ jobs:
           CURRENT_WEEK=$((DAYS_ELAPSED / 7))
           CURRENT_DAY=$((DAYS_ELAPSED % 7))
           
-          # Índice en el array (columna * 7 + fila)
-          PIXEL_INDEX=$((CURRENT_WEEK * 7 + CURRENT_DAY))
+          # Índice en el array: el arte está en formato fila×columna → día * 53 + semana
+          PIXEL_INDEX=$((CURRENT_DAY * 53 + CURRENT_WEEK))
           
           echo "📅 Información de fecha:"
           echo "   → Fecha inicio gráfico: $START_DATE"
@@ -158,7 +158,7 @@ jobs:
               printf "  %s │" "${DAYS[$row]}"
               
               for week in $(seq 0 52); do
-                idx=$((week * 7 + row))
+                idx=$((row * 53 + week))
                 if [ "$idx" -lt "$TOTAL_PIXELS" ]; then
                   if [ "$idx" -eq "$PIXEL_INDEX" ]; then
                     # Día actual - marcador especial
