@@ -83,8 +83,9 @@ jobs:
           
           if [ "$TOTAL_PIXELS" -ne "$EXPECTED_PIXELS" ]; then
             echo ""
-            echo "⚠️  ¡Advertencia! El canvas no tiene las dimensiones correctas (53×7)"
-            echo "   Se usarán los pixels disponibles..."
+            echo "❌ Error: el canvas tiene $TOTAL_PIXELS pixels pero se esperaban $EXPECTED_PIXELS (53×7)"
+            echo "   Revisá el PIXEL_ART y asegurate de que tenga exactamente 7 filas × 53 columnas."
+            exit 1
           fi
           echo ""
           
@@ -102,8 +103,8 @@ jobs:
             START_DATE=$(date -d "$START_DATE - $START_DOW days" +%Y-%m-%d)
           fi
           
-          START_EPOCH=$(date -d "$START_DATE" +%s)
-          CURRENT_EPOCH=$(date +%s)
+          START_EPOCH=$(date -u -d "$START_DATE" +%s)
+          CURRENT_EPOCH=$(date -u +%s)
           DAYS_ELAPSED=$(( (CURRENT_EPOCH - START_EPOCH) / 86400 ))
           
           # Calcular semana y día
@@ -250,8 +251,8 @@ jobs:
             exit 0
           fi
           
-          # Obtener el valor del pixel actual
-          PIXEL_VALUE=${PIXELS[$PIXEL_INDEX]}
+          # Obtener el valor del pixel actual (default 0 si el elemento está vacío)
+          PIXEL_VALUE=${PIXELS[$PIXEL_INDEX]:-0}
           
           echo "🎨 Pixel actual:"
           echo "   → Valor: $PIXEL_VALUE"
@@ -274,8 +275,10 @@ jobs:
           # 🎲 Generar número aleatorio de commits (1-5, raramente 6)
           # ──────────────────────────────────────────────────────────────────
           
-          RANDOM_SEED=$(( $(date +%s) + $$ ))
-          RANDOM=$RANDOM_SEED
+          # Seed basado en fecha + índice del pixel: constante para todos los runs del mismo día
+          # Esto garantiza que DAILY_COMMITS sea el mismo en las 6 ejecuciones y la distribución sea correcta
+          DATE_SEED=$(echo "$(date -u +%Y%m%d)${PIXEL_INDEX}" | cksum | cut -d' ' -f1)
+          RANDOM=$((DATE_SEED % 32767))
           
           RAND_VAL=$((RANDOM % 100))
           
@@ -340,7 +343,7 @@ jobs:
           
           for i in $(seq 1 $COMMITS_PER_RUN); do
             TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S")
-            RANDOM_ID=$(head /dev/urandom | tr -dc 'a-f0-9' | head -c 6)
+            RANDOM_ID=$(head -c 32 /dev/urandom | tr -dc 'a-f0-9' | head -c 6)
             MSG_INDEX=$((RANDOM % ${#MESSAGES[@]}))
             MESSAGE="${MESSAGES[$MSG_INDEX]}"
             
