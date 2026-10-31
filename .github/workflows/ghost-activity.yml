@@ -1,19 +1,44 @@
 name: 👻 My Ghost
 
+# Draws pixel art on the contribution graph (53 weeks × 7 days of the current year).
+#
+# How it works
+#   • Each pixel of the canvas below is one day: 1 = commit that day, 0 = no commits.
+#   • Every run is self-correcting: it looks at .ghost/activity.log, sees how many
+#     commits today still needs, and adds only the missing ones. It no longer matters
+#     how many scheduled runs GitHub drops or delays.
+#   • Days that were missed are healed with backdated commits:
+#       - scheduled runs heal the last 7 days
+#       - a manual run with "backfill" enabled heals the whole current year
+#
+# NOTE: commits can only be added, never removed. Commits that landed on a pixel that
+# is 0 in the canvas (e.g. from an older canvas) stay there unless history is rewritten.
+
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Each 4 hours...
+    - cron: '17 */4 * * *'   # Every 4 hours, off the top of the hour (less congested)
   workflow_dispatch:
     inputs:
       preview:
-        description: '👁️ Show my cooooommiiits'
+        description: '👁️ Preview only (show the canvas and what is missing, no commits)'
         type: boolean
         default: false
+      backfill:
+        description: '🩹 Backfill every missing pixel of the current year (backdated commits)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ghost-activity
+  cancel-in-progress: false
 
 jobs:
   generate-activity:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: 👻 Checkout repository
         uses: actions/checkout@v4
@@ -26,343 +51,180 @@ jobs:
           git config user.name "TheBigEye"
           git config user.email "thebigeyedev@gmail.com"
 
-      - name: 🎨 Generate Art
+      - name: 🎨 Generate art
         env:
           PREVIEW_ONLY: ${{ github.event.inputs.preview }}
+          BACKFILL: ${{ github.event.inputs.backfill }}
+          # ╔══════════════════════════════════════════════════════════════════════════╗
+          # ║  🎨 PIXEL ART CANVAS — 53 columns (weeks) × 7 rows (days)                ║
+          # ║  Row 1 = Sunday, Row 2 = Monday, ... Row 7 = Saturday                    ║
+          # ║  0 = empty (no commits)   1 = coloured pixel (1-6 commits)               ║
+          # ║  Column 1 is the week that contains January 1st.                         ║
+          # ╚══════════════════════════════════════════════════════════════════════════╝
+          CANVAS: |
+            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+            1 0 0 1 0 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
+            1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1
+            1 0 0 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 0 0 0 0 1
+            1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1
+            1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
+            1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
         run: |
-          # ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-          # ║                                          🎨 PIXEL ART CANVAS                                               ║
-          # ║                                                                                                            ║
-          # ║  📐 Dimensions: 53 columns × 7 rows (53 weeks × 7 days)                                                    ║
-          # ║  🎯 Values: 0 = empty (not commits) | 1 = coloured pixel (1-6 commits random)                              ║
-          # ║                                                                                                            ║
-          # ║  📅 Las filas representan días de la semana:                                                               ║
-          # ║     Fila 1 = Domingo                                                                                       ║
-          # ║     Fila 2 = Lunes                                                                                         ║
-          # ║     Fila 3 = Martes                                                                                        ║
-          # ║     Fila 4 = Miércoles                                                                                     ║
-          # ║     Fila 5 = Jueves                                                                                        ║
-          # ║     Fila 6 = Viernes                                                                                       ║
-          # ║     Fila 7 = Sábado                                                                                        ║
-          # ║                                                                                                            ║
-          # ║  💡 Tip: Diseña tu arte en un editor de texto y copia aquí                                                 ║
-          # ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-          
-          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
-          #  🖼️ TU DISEÑO AQUÍ - Ejemplo: Texto "HELLO GITHUB"
-          # ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
-          
-          read -r -d '' PIXEL_ART << 'CANVAS' || true
-          1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-          1 0 0 1 0 1 0 0 0 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
-          1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 0 0 1
-          1 0 0 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 0 0 0 0 1
-          1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1 1 1 0 0 1 0 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 0 0 1 0 1
-          1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1
-          1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-          CANVAS
+          python3 - << 'PY'
+          import math, os, random, subprocess, sys
+          from datetime import date, datetime, timedelta, timezone
 
-          # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
-          #  🔧 LÓGICA DEL WORKFLOW (no necesitas modificar nada debajo de esta línea)
-          # ══════════════════════════════════════════════════════════════════════════════════════════════════════════════
-          
-          echo ""
-          echo "╔══════════════════════════════════════════════════════════════╗"
-          echo "║           👻 GHOST ACTIVITY ART GENERATOR 👻                 ║"
-          echo "╚══════════════════════════════════════════════════════════════╝"
-          echo ""
-          
-          # Convertir el arte a un array
-          IFS=' ' read -r -a PIXELS <<< "$(echo "$PIXEL_ART" | tr '\n' ' ')"
-          TOTAL_PIXELS=${#PIXELS[@]}
-          EXPECTED_PIXELS=$((53 * 7))  # 371 pixels
-          
-          echo "📊 Validación del canvas:"
-          echo "   → Pixels encontrados: $TOTAL_PIXELS"
-          echo "   → Pixels esperados: $EXPECTED_PIXELS"
-          
-          if [ "$TOTAL_PIXELS" -ne "$EXPECTED_PIXELS" ]; then
-            echo ""
-            echo "❌ Error: el canvas tiene $TOTAL_PIXELS pixels pero se esperaban $EXPECTED_PIXELS (53×7)"
-            echo "   Revisá el PIXEL_ART y asegurate de que tenga exactamente 7 filas × 53 columnas."
-            exit 1
-          fi
-          echo ""
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 📅 Calcular qué día del año es hoy
-          # ──────────────────────────────────────────────────────────────────
-          
-          YEAR=$(date +%Y)
-          START_DATE="${YEAR}-01-01"
-          
-          # Ajustar al domingo de la semana que contiene el 1 de enero
-          # (igual a como GitHub calcula la primera columna del año)
-          START_DOW=$(date -d "$START_DATE" +%w)
-          if [ "$START_DOW" -ne 0 ]; then
-            START_DATE=$(date -d "$START_DATE - $START_DOW days" +%Y-%m-%d)
-          fi
-          
-          START_EPOCH=$(date -u -d "$START_DATE" +%s)
-          CURRENT_EPOCH=$(date -u +%s)
-          DAYS_ELAPSED=$(( (CURRENT_EPOCH - START_EPOCH) / 86400 ))
-          
-          # Calcular semana y día
-          CURRENT_WEEK=$((DAYS_ELAPSED / 7))
-          CURRENT_DAY=$((DAYS_ELAPSED % 7))
-          
-          # Índice en el array: el arte está en formato fila×columna → día * 53 + semana
-          PIXEL_INDEX=$((CURRENT_DAY * 53 + CURRENT_WEEK))
-          
-          echo "📅 Información de fecha:"
-          echo "   → Fecha inicio gráfico: $START_DATE"
-          echo "   → Días transcurridos: $DAYS_ELAPSED"
-          echo "   → Semana actual: $CURRENT_WEEK (de 53)"
-          echo "   → Día de la semana: $CURRENT_DAY (0=Dom, 6=Sáb)"
-          echo "   → Índice del pixel: $PIXEL_INDEX"
-          echo ""
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 👁️ Modo Preview - MUESTRA TODO EL BANNER
-          # ──────────────────────────────────────────────────────────────────
-          
-          if [ "$PREVIEW_ONLY" = "true" ]; then
-            echo "👁️ MODO PREVIEW - No se realizarán commits"
-            echo ""
-            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
-            echo "                                    🎨 VISTA COMPLETA DEL CANVAS (53 semanas × 7 días)"
-            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
-            echo ""
-            
-            # Header con números de semana (cada 5 semanas)
-            printf "        "
-            for week in $(seq 0 52); do
-              if [ $((week % 5)) -eq 0 ]; then
-                printf "%-5s" "$week"
-              else
-                printf " "
-              fi
-            done
-            echo ""
-            
-            # Línea separadora superior
-            printf "       ┌"
-            for week in $(seq 0 52); do
-              printf "─"
-            done
-            printf "┐\n"
-            
-            # Días de la semana
-            DAYS=("Dom" "Lun" "Mar" "Mié" "Jue" "Vie" "Sáb")
-            
-            for row in 0 1 2 3 4 5 6; do
-              printf "  %s │" "${DAYS[$row]}"
-              
-              for week in $(seq 0 52); do
-                idx=$((row * 53 + week))
-                if [ "$idx" -lt "$TOTAL_PIXELS" ]; then
-                  if [ "$idx" -eq "$PIXEL_INDEX" ]; then
-                    # Día actual - marcador especial
-                    printf "🔵"
-                  elif [ "${PIXELS[$idx]}" -eq 1 ]; then
-                    printf "🟩"
-                  else
-                    printf "⬜"
-                  fi
-                else
-                  printf " "
-                fi
-              done
-              printf "│\n"
-            done
-            
-            # Línea separadora inferior
-            printf "       └"
-            for week in $(seq 0 52); do
-              printf "─"
-            done
-            printf "┘\n"
-            
-            echo ""
-            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
-            echo ""
-            echo "📊 LEYENDA:"
-            echo "   🔵 = Día actual (Semana $CURRENT_WEEK, Día $CURRENT_DAY)"
-            echo "   🟩 = Pixel activo (generará commits)"
-            echo "   ⬜ = Pixel vacío (sin commits)"
-            echo ""
-            echo "📈 ESTADÍSTICAS:"
-            
-            # Contar pixels activos
-            ACTIVE_PIXELS=0
-            EMPTY_PIXELS=0
-            COMPLETED_ACTIVE=0
-            COMPLETED_EMPTY=0
-            REMAINING_ACTIVE=0
-            
-            for i in $(seq 0 $((TOTAL_PIXELS - 1))); do
-              if [ "${PIXELS[$i]}" -eq 1 ]; then
-                ACTIVE_PIXELS=$((ACTIVE_PIXELS + 1))
-                if [ "$i" -lt "$PIXEL_INDEX" ]; then
-                  COMPLETED_ACTIVE=$((COMPLETED_ACTIVE + 1))
-                elif [ "$i" -gt "$PIXEL_INDEX" ]; then
-                  REMAINING_ACTIVE=$((REMAINING_ACTIVE + 1))
-                fi
-              else
-                EMPTY_PIXELS=$((EMPTY_PIXELS + 1))
-                if [ "$i" -lt "$PIXEL_INDEX" ]; then
-                  COMPLETED_EMPTY=$((COMPLETED_EMPTY + 1))
-                fi
-              fi
-            done
-            
-            TOTAL_COMPLETED=$((COMPLETED_ACTIVE + COMPLETED_EMPTY))
-            if [ "$PIXEL_INDEX" -lt "$TOTAL_PIXELS" ]; then
-              TOTAL_COMPLETED=$((TOTAL_COMPLETED + 1))
-            fi
-            PROGRESS=$((TOTAL_COMPLETED * 100 / TOTAL_PIXELS))
-            
-            echo "   → Total de pixels: $TOTAL_PIXELS"
-            echo "   → Pixels activos (🟩): $ACTIVE_PIXELS"
-            echo "   → Pixels vacíos (⬜): $EMPTY_PIXELS"
-            echo "   → Días completados: $TOTAL_COMPLETED / $TOTAL_PIXELS ($PROGRESS%)"
-            echo "   → Días activos restantes: $REMAINING_ACTIVE"
-            echo ""
-            
-            # Barra de progreso visual
-            printf "   Progreso: ["
-            FILLED=$((PROGRESS / 2))
-            EMPTY_BAR=$((50 - FILLED))
-            for i in $(seq 1 $FILLED); do printf "█"; done
-            for i in $(seq 1 $EMPTY_BAR); do printf "░"; done
-            printf "] %d%%\n" "$PROGRESS"
-            
-            echo ""
-            echo "═══════════════════════════════════════════════════════════════════════════════════════════════════════════════"
-            exit 0
-          fi
-          
-          # ──────────────────────────────────────────────────────────────────
-          # Verificar que estamos dentro del rango
-          # ──────────────────────────────────────────────────────────────────
-          
-          if [ "$PIXEL_INDEX" -ge "$TOTAL_PIXELS" ] || [ "$PIXEL_INDEX" -lt 0 ]; then
-            echo "📍 Fuera del rango del canvas. Nada que hacer hoy."
-            exit 0
-          fi
-          
-          # Obtener el valor del pixel actual (default 0 si el elemento está vacío)
-          PIXEL_VALUE=${PIXELS[$PIXEL_INDEX]:-0}
-          
-          echo "🎨 Pixel actual:"
-          echo "   → Valor: $PIXEL_VALUE"
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 🎯 Determinar acción basada en el pixel
-          # ──────────────────────────────────────────────────────────────────
-          
-          if [ "$PIXEL_VALUE" -eq 0 ]; then
-            echo "   → Estado: ⬜ Vacío (sin commits)"
-            echo ""
-            echo "😴 No hay actividad programada para hoy."
-            exit 0
-          fi
-          
-          echo "   → Estado: 🟩 Activo (generando commits)"
-          echo ""
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 🎲 Generar número aleatorio de commits (1-5, raramente 6)
-          # ──────────────────────────────────────────────────────────────────
-          
-          # Seed basado en fecha + índice del pixel: constante para todos los runs del mismo día
-          # Esto garantiza que DAILY_COMMITS sea el mismo en las 6 ejecuciones y la distribución sea correcta
-          DATE_SEED=$(echo "$(date -u +%Y%m%d)${PIXEL_INDEX}" | cksum | cut -d' ' -f1)
-          RANDOM=$((DATE_SEED % 32767))
-          
-          RAND_VAL=$((RANDOM % 100))
-          
-          if [ "$RAND_VAL" -lt 85 ]; then
-            DAILY_COMMITS=$(( (RANDOM % 5) + 1 ))
-          else
-            DAILY_COMMITS=6
-          fi
-          
-          HOUR=$(date +%H)
-          RUN_INDEX=$((HOUR / 4))  # 0-5
-          
-          # Distribuir commits entre ejecuciones
-          BASE_COMMITS=$((DAILY_COMMITS / 6))
-          REMAINDER=$((DAILY_COMMITS % 6))
-          
-          if [ "$RUN_INDEX" -lt "$REMAINDER" ]; then
-            COMMITS_PER_RUN=$((BASE_COMMITS + 1))
-          else
-            COMMITS_PER_RUN=$BASE_COMMITS
-          fi
-          
-          # Asegurar al menos 1 commit en la primera ejecución del día
-          if [ "$COMMITS_PER_RUN" -lt 1 ] && [ "$RUN_INDEX" -eq 0 ]; then
-            COMMITS_PER_RUN=1
-          fi
-          
-          echo "🎲 Commits calculados:"
-          echo "   → Total del día: $DAILY_COMMITS"
-          echo "   → Ejecución actual: $((RUN_INDEX + 1)) de 6"
-          echo "   → Commits esta ejecución: $COMMITS_PER_RUN"
-          echo ""
-          
-          # ──────────────────────────────────────────────────────────────────
-          # 🔨 Generar commits
-          # ──────────────────────────────────────────────────────────────────
-          
-          if [ "$COMMITS_PER_RUN" -lt 1 ]; then
-            echo "⏭️ Esta ejecución no tiene commits asignados. ¡Hasta la próxima!"
-            exit 0
-          fi
-          
-          echo "🔨 Generando commits..."
-          echo ""
-          
-          mkdir -p .ghost
-          
-          MESSAGES=(
-            "👻 Spectral update"
-            "🌙 Midnight whispers"
-            "✨ Ethereal enhancement"
-            "🔮 Phantom patch"
-            "💫 Cosmic adjustment"
-            "🌟 Stellar sync"
-            "🎭 Shadow dance"
-            "🦇 Night flight"
-            "🌌 Void optimization"
-            "👁️ Watchful update"
-            "🕯️ Candlelight commit"
-            "🌑 Dark side fix"
-          )
-          
-          for i in $(seq 1 $COMMITS_PER_RUN); do
-            TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S")
-            RANDOM_ID=$(head -c 32 /dev/urandom | tr -dc 'a-f0-9' | head -c 6)
-            MSG_INDEX=$((RANDOM % ${#MESSAGES[@]}))
-            MESSAGE="${MESSAGES[$MSG_INDEX]}"
-            
-            echo "[$TIMESTAMP] Pixel [$CURRENT_WEEK,$CURRENT_DAY] | ID: $RANDOM_ID" >> .ghost/activity.log
-            
-            git add .ghost/
-            git commit -m "$MESSAGE" -m "🎨 Pixel: Week $CURRENT_WEEK, Day $CURRENT_DAY" --allow-empty
-            
-            echo "   ✓ Commit $i/$COMMITS_PER_RUN: $MESSAGE"
-            
-            sleep 1
-          done
-          
-          echo ""
-          echo "╔══════════════════════════════════════════════════════════════╗"
-          echo "║  ✅ ¡Completado! $COMMITS_PER_RUN commits generados          ║"
-          echo "╚══════════════════════════════════════════════════════════════╝"
+          WEEKS, DAYS = 53, 7
+          LOG = ".ghost/activity.log"
+          HEAL_DAYS = 7          # how far back scheduled runs look for missed days
+          MESSAGES = [
+              "👻 Spectral update", "🌙 Midnight whispers", "✨ Ethereal enhancement",
+              "🔮 Phantom patch", "💫 Cosmic adjustment", "🌟 Stellar sync",
+              "🎭 Shadow dance", "🦇 Night flight", "🌌 Void optimization",
+              "👁️ Watchful update", "🕯️ Candlelight commit", "🌑 Dark side fix",
+          ]
+          sysrand = random.SystemRandom()
+
+
+          def load_canvas(text):
+              rows = [[int(x) for x in line.split()] for line in text.strip().splitlines() if line.strip()]
+              if len(rows) != DAYS or any(len(r) != WEEKS for r in rows):
+                  sys.exit(f"❌ Canvas must be {WEEKS} columns × {DAYS} rows, got {len(rows)} rows with widths {sorted({len(r) for r in rows})}")
+              if any(v not in (0, 1) for r in rows for v in r):
+                  sys.exit("❌ Canvas may only contain 0 and 1")
+              return rows
+
+
+          def grid_start(year):
+              """Sunday of the week that contains January 1st (first column of the year view)."""
+              jan1 = date(year, 1, 1)
+              return jan1 - timedelta(days=(jan1.weekday() + 1) % 7)
+
+
+          def cell(day, rows):
+              """(week, weekday, value) of a day in its year's grid, or None if outside it."""
+              week, wd = divmod((day - grid_start(day.year)).days, DAYS)
+              return (week, wd, rows[wd][week]) if 0 <= week < WEEKS else None
+
+
+          def daily_commits(day):
+              """Deterministic 1-6 commits per day (same answer on every run of that day)."""
+              rng = random.Random(f"ghost-{day.isoformat()}")
+              return rng.randint(1, 5) if rng.random() < 0.85 else 6
+
+
+          def commits_per_day():
+              counts = {}
+              if os.path.exists(LOG):
+                  with open(LOG, encoding="utf-8") as f:
+                      for line in f:
+                          if line.startswith("[") and "Pixel" in line:   # [YYYY-MM-DDTHH:MM:SS] Pixel [w,d] | ID: x
+                              counts[line[1:11]] = counts.get(line[1:11], 0) + 1
+              return counts
+
+
+          def ghost_commit(when, week, wd):
+              stamp = when.strftime("%Y-%m-%dT%H:%M:%S")
+              os.makedirs(".ghost", exist_ok=True)
+              with open(LOG, "a", encoding="utf-8") as f:
+                  f.write(f"[{stamp}] Pixel [{week},{wd}] | ID: {sysrand.getrandbits(24):06x}\n")
+              env = dict(os.environ, GIT_AUTHOR_DATE=f"{stamp}+00:00", GIT_COMMITTER_DATE=f"{stamp}+00:00")
+              subprocess.run(["git", "add", ".ghost/"], check=True)
+              subprocess.run(["git", "commit", "-q", "--allow-empty", "-m", sysrand.choice(MESSAGES),
+                              "-m", f"🎨 Pixel: Week {week}, Day {wd}"], check=True, env=env)
+              print(f"   ✓ {stamp}Z  pixel [{week},{wd}]")
+
+
+          def main(now):
+              rows = load_canvas(os.environ["CANVAS"])
+              preview = os.environ.get("PREVIEW_ONLY") == "true"
+              full = os.environ.get("BACKFILL") == "true"
+              today = now.date()
+              counts = commits_per_day()
+              jan1 = date(today.year, 1, 1)
+              heal_from = jan1 if full else max(jan1, today - timedelta(days=HEAL_DAYS))
+
+              print("╔══════════════════════════════════════════╗")
+              print("║     👻 GHOST ACTIVITY ART GENERATOR 👻    ║")
+              print("╚══════════════════════════════════════════╝")
+              print(f"📅 Now (UTC): {now:%Y-%m-%d %H:%M}   grid starts: {grid_start(today.year)}")
+
+              # 1) Days in the heal window that should have commits but have none
+              missed = []
+              for i in range((today - heal_from).days):          # up to yesterday
+                  day = heal_from + timedelta(days=i)
+                  c = cell(day, rows)
+                  if c and c[2] == 1 and counts.get(day.isoformat(), 0) == 0:
+                      missed.append((day, c[0], c[1]))
+
+              # 2) Today: how many commits are due by this hour (catches up if runs were skipped)
+              c = cell(today, rows)
+              today_due, today_cell = 0, c
+              if c and c[2] == 1:
+                  target = math.ceil(daily_commits(today) * (now.hour + 1) / 24)
+                  today_due = max(0, target - counts.get(today.isoformat(), 0))
+
+              if preview:
+                  print("\n👁️ PREVIEW — no commits will be made\n")
+                  icons = {}
+                  for w in range(WEEKS):
+                      for r in range(DAYS):
+                          day = grid_start(today.year) + timedelta(days=w * 7 + r)
+                          n = counts.get(day.isoformat(), 0)
+                          if day == today:       icons[(r, w)] = "🔵"
+                          elif day > today:      icons[(r, w)] = "🟩" if rows[r][w] else "⬜"   # future pixels
+                          elif rows[r][w] and n: icons[(r, w)] = "🟩"
+                          elif rows[r][w]:       icons[(r, w)] = "🟥"
+                          elif n:                icons[(r, w)] = "🟧"
+                          else:                  icons[(r, w)] = "⬜"
+                  for r, name in enumerate(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]):
+                      print(f"  {name} " + "".join(icons[(r, w)] for w in range(WEEKS)))
+                  print("\n  🟩 ok / planned   🟥 missing   🟧 extra commits on an empty pixel   🔵 today   ⬜ empty\n")
+                  every = [(grid_start(today.year) + timedelta(days=w * 7 + r), w, r)
+                           for w in range(WEEKS) for r in range(DAYS)]
+                  all_missing = [d for d, w, r in every
+                                 if d.year == today.year and d < today and rows[r][w] and not counts.get(d.isoformat(), 0)]
+                  extras = [d for d, w, r in every
+                            if d.year == today.year and d <= today and not rows[r][w] and counts.get(d.isoformat(), 0)]
+                  print(f"  Missing in the whole year : {len(all_missing)}")
+                  print(f"  Would be healed this run  : {len(missed)} day(s) {'(full backfill)' if full else f'(last {HEAL_DAYS} days)'}")
+                  print(f"  Due today                 : {today_due} commit(s)")
+                  print(f"  Extra (cannot be removed) : {len(extras)} day(s)")
+                  return
+
+              # 3) Heal missed days with backdated commits (06:00–18:00 UTC, so the day is unambiguous)
+              if missed:
+                  print(f"\n🩹 Healing {len(missed)} missed day(s)")
+              for day, week, wd in missed:
+                  rng = random.Random(f"time-{day.isoformat()}")
+                  secs = sorted(rng.sample(range(6 * 3600, 18 * 3600), daily_commits(day)))
+                  print(f"   {day}")
+                  for s in secs:
+                      ghost_commit(datetime(day.year, day.month, day.day, tzinfo=timezone.utc) + timedelta(seconds=s), week, wd)
+
+              # 4) Today's commits
+              if today_cell is None or today_cell[2] == 0:
+                  print("\n😴 Today is an empty pixel. Nothing to draw.")
+              elif today_due == 0:
+                  print(f"\n✅ Today's pixel [{today_cell[0]},{today_cell[1]}] is up to date.")
+              else:
+                  print(f"\n🔨 Today: pixel [{today_cell[0]},{today_cell[1]}], adding {today_due} commit(s)")
+                  for _ in range(today_due):
+                      ghost_commit(datetime.now(timezone.utc).replace(tzinfo=None), today_cell[0], today_cell[1])
+
+
+          main(datetime.now(timezone.utc))
+          PY
 
       - name: 🚀 Push changes
         if: ${{ github.event.inputs.preview != 'true' }}
         run: |
-          git push origin HEAD 2>/dev/null || echo "📭 Nothing to push"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD; then exit 0; fi
+            echo "⚠️ Push rejected (attempt $attempt/5). Rebasing on the remote branch..."
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase --committer-date-is-author-date "origin/$GITHUB_REF_NAME"
+            sleep $((attempt * 3))
+          done
+          echo "❌ Could not push after 5 attempts"
+          exit 1
