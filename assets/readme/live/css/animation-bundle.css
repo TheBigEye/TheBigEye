@@ -9,7 +9,7 @@
   .scan { animation: scan-profile-dark 20s linear 3s infinite; }
   @keyframes scan-profile-dark { 0% { transform: translateY(0); opacity:0 }
                     3% { opacity:.2 } 97% { opacity:.07 }
-                    100% { transform: translateY(1434 px); opacity:0 } }
+                    100% { transform: translateY(1530 px); opacity:0 } }
   .look { opacity: 0; }
   @keyframes g-d1-profile-dark { 0%{opacity:0} 84.733%{opacity:0} 85.333%{opacity:1} 87.400%{opacity:1} 88.000%{opacity:0} 90.067%{opacity:0} 90.667%{opacity:1} 92.733%{opacity:1} 93.333%{opacity:0} }
   .g-d1 { animation: g-d1-profile-dark 16.0s ease-in-out infinite; }
