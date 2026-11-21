@@ -1,7 +1,7 @@
 <!-- ═══════════════ ANIMATED README · generated ═══════════════ -->
 
 <p align="center">
-  <a href="https://github.com/TheBigEye"><img src="assets/readme/live/profile-dark.svg?v=202611210307" alt="The whole profile as one terminal session — the picture is ANSI art" width="100%"></a>
+  <a href="https://github.com/TheBigEye"><img src="assets/readme/live/profile-dark.svg?v=202611211455" alt="The whole profile as one terminal session — the picture is ANSI art" width="100%"></a>
 </p>
 
 - 🔭 I’m currently working on **[Monarch OS](https://github.com/TheBigEye/Monarch-OS)** and **[Aircraft](https://github.com/TheBigEye/Aircraft)**.
@@ -32,7 +32,7 @@ flowchart LR
 | **portrait** | the photo quantised to 40×20 cells of CP437 blocks | the gaze and the blink are CSS |
 | **terminal** | one SVG window in the VGA console font, CSS keyframes | animation ships inside the file |
 
-**Last build** `2026-11-21 03:07:10 UTC` · **contributions** `983` · **streak** `1d` / best `55d` · **rank** `B+` · **degraded sources** `9`
+**Last build** `2026-11-21 14:55:15 UTC` · **contributions** `986` · **streak** `1d` / best `55d` · **rank** `A-` · **degraded sources** `0`
 
 <sub>Rendered by `scripts/` from the GitHub API and the contribution calendar. Sources that fail are noted above; the rest of the README still renders.</sub>
 
