@@ -8,7 +8,7 @@
   .scan { animation: scan-profile-dark 16s linear 3s infinite; }
   @keyframes scan-profile-dark { 0% { transform: translateY(0); opacity:0 }
                     3% { opacity:.2 } 97% { opacity:.07 }
-                    100% { transform: translateY(1274 px); opacity:0 } }
+                    100% { transform: translateY(1482 px); opacity:0 } }
   .look, .shut { opacity: 0; }
   @keyframes g-l1-profile-dark { 0%{opacity:0} 43.750%{opacity:1} 49.375%{opacity:0} 75.625%{opacity:1} 81.250%{opacity:0} }
   .g-l1 { animation: g-l1-profile-dark 16.0s steps(1,end) infinite; }
