@@ -29,6 +29,7 @@ PX, PY = 2, 26                      # where the picture starts, in px
 SIDE = 43                           # column where the text beside the eye starts
 
 AVATAR_FILE = os.path.join(ROOT, "assets/readme/data/avatar.json")
+ABOUT_FILE = os.path.join(ROOT, "assets/readme/data/about.json")
 BRANDS_FILE = os.path.join(ROOT, "assets/readme/icons/brands.json")
 
 # The colours GitHub itself uses for a language dot, so the little boxes read as
@@ -172,18 +173,18 @@ def meter(frac: float, width: int) -> str:
     return "▄" * filled + " " * (width - filled)
 
 
-def _top(path: str, clock: str) -> dict:
+def _top(path: str) -> dict:
     """
     The frame's top rule, cut into the runs that carry their own colour:
-    `┌──┤ ~/github/Green_Eye ├───────┤ 03:07 UTC ─┐`, always INNER+2 columns.
+    `┌──┤ ~/github/Green_Eye ├────────────┐`, always INNER+2 columns.
+
+    No clock up here: the time belongs to the session (`$ date`), and a window
+    that says the same thing twice is exactly the clutter we are removing.
     """
     lead = "┌──┤ "
     mid_at = len(lead) + len(path)
-    tail = f"┤ {clock} ─┐"
-    tail_at = INNER + 2 - len(tail)
     return {"lead": lead, "path": path, "mid_at": mid_at,
-            "dash": "├" + "─" * (tail_at - mid_at - 1),
-            "tail_at": tail_at, "clock": clock, "tail": tail}
+            "dash": "├" + "─" * (INNER - mid_at - 1), "end": "─┐"}
 
 
 # ── the picture ──────────────────────────────────────────────────────────────
@@ -254,14 +255,41 @@ def _eye(c: dict) -> tuple[str, int]:
 
 # ── the session ──────────────────────────────────────────────────────────────
 
+RULE = "─" * INNER          # one separator, used everywhere, never mixed
+
+
+def _about() -> dict:
+    """The hand-written part of the profile: the owner's own words."""
+    with open(ABOUT_FILE, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _wrap(text: str, width: int) -> list[str]:
+    out, line = [], ""
+    for word in text.split():
+        if line and len(line) + 1 + len(word) > width:
+            out.append(line)
+            line = word
+        else:
+            line = f"{line} {word}".strip()
+    if line:
+        out.append(line)
+    return out
+
+
 def session(d: dict, c: dict) -> str:
     """
     The whole screen: the eye and its column, then the blocks underneath.
 
     The body is drawn into a list while its last row is tracked, and the frame
     is sized from that — a card can then never clip its own contents.
+
+    Layout rule, everywhere: a block is a `$ command` row, its output, and one
+    empty row. Nothing else separates two blocks, so the screen reads as one
+    session and not as a pile of widgets.
     """
     u, t, con = d["user"], d["totals"], d["contributions"]
+    about = _about()
     av = _avatar()
     eye, eye_rows = _eye(c)
     brands = _brands()
@@ -301,15 +329,41 @@ def session(d: dict, c: dict) -> str:
              ("", c["muted"]),
              ("$ account", c["accent3"]),
              (f"{t['repos']} repos · {t['prs']} pull requests · "
-              f"{t['issues']} issues", c["muted"])]
+              f"{t['issues']} issues", c["muted"]),
+             ("", c["muted"]),
+             ("$ date", c["accent3"]),
+             (f"{stamp} UTC", c["muted"])]
     for i, (txt, col) in enumerate(side):
         body.append(A.text(A.CW * SIDE, PY + i * A.CH, txt, col))
     for i, (_, val, ceiling) in enumerate(stats):
         body.append(A.text(A.CW * (SIDE + 20), PY + (stats_at + i) * A.CH,
                            meter(val / ceiling, 14), c["accent"]))
 
+    # ── about: the seven lines the owner wrote, in terminal clothing ────
+    # Whatever is taller wins: the portrait grid or the column beside it.
+    y = max(PY + eye_rows * A.CH, PY + len(side) * A.CH) + A.CH
+    right = f"{len(about['lines'])} lines"
+    body.append(A.text(A.CW, y, f"$ cat ~/{about['prompt']}", c["accent3"]))
+    body.append(A.text(A.CW * (INNER - len(right)), y, right, c["dim"]))
+    y += A.CH
+    for item in about["lines"]:
+        wrapped = _wrap(item["text"], INNER - 6)
+        for chunk in wrapped:
+            body.append(A.text(A.CW * 4, y, chunk, c["muted"]))
+            y += A.CH
+    # The same words again, as the reference list a man page prints at the
+    # bottom. Labels, not links: GitHub draws this SVG through an <img>, and
+    # nothing inside an <img> can be clicked.
+    y += A.CH
+    links = [l["label"] for item in about["lines"] for l in item["links"]]
+    for i, label in enumerate(links):
+        x = A.CW * (2 + (i % 4) * 25)
+        row = y + (i // 4) * A.CH
+        body.append(A.text(x, row, "▸ ", c["line"]))
+        body.append(A.text(x + A.CW * 2, row, label[:21], c["accent3"]))
+    y += ((len(links) + 3) // 4) * A.CH + A.CH
+
     # ── stack ───────────────────────────────────────────────────────────
-    y = PY + eye_rows * A.CH + A.CH
     known = [l for l in d["languages"] if l["name"] in LANG_COLOR]
     for name, note in README_LANGS:       # named in the README, no repo yet
         if name not in [l["name"] for l in known] and name in LANG_COLOR:
@@ -330,8 +384,7 @@ def session(d: dict, c: dict) -> str:
             body.append(A.text(A.CW * 48, y, f"{l['repos']} repos", c["dim"]))
         y += A.CH
     y += A.CH
-    # the little colour boxes GitHub draws next to a repo name
-    for i, l in enumerate(known):
+    for i, l in enumerate(known):          # the dots GitHub draws by a repo
         x = A.CW * (2 + (i % 3) * 30)
         yy = y + (i // 3) * A.CH
         body.append(f'<rect x="{x}" y="{yy + 3}" width="10" height="10" rx="2" '
@@ -397,8 +450,8 @@ def session(d: dict, c: dict) -> str:
     # ── when in the day ─────────────────────────────────────────────────
     hours = con.get("hours") or [0] * 24
     hmax = max(hours + [1])
-    body.append(A.text(A.CW, y, "$ history | awk '{print $2}' | cut -d: -f1 | "
-                                 "sort | uniq -c", c["accent3"]))
+    body.append(A.text(A.CW, y, "$ history | cut -d: -f1 | uniq -c",
+                       c["accent3"]))
     body.append(A.text(A.CW * (INNER - 9), y, "by hour", c["dim"]))
     y += A.CH
     baseline = y + 4 * A.CH                    # bars grow up from the tick row
@@ -458,19 +511,16 @@ def session(d: dict, c: dict) -> str:
         y += A.CH
     y += A.CH
 
-    # ── footer ──────────────────────────────────────────────────────────
-    prompt = "[eye@github ~]$ exit 0"
+    # ── footer: the session ends on the prompt, nothing else ────────────
+    prompt = "[eye@github ~]$ "
     body.append(A.text(A.CW * 2, y, prompt, c["accent3"]))
-    body.append(A.text(A.CW * (3 + len(prompt)), y, "█", c["accent3"],
+    body.append(A.text(A.CW * (2 + len(prompt)), y, "█", c["accent3"],
                        cls="blink"))
-    y += A.CH
-    body.append(A.text(A.CW * 2, y, "generated by "
-                       f".github/workflows/readme.yml · {stamp} UTC", c["dim"]))
     y += A.CH * 2
 
     # ── frame, sized from the body ──────────────────────────────────────
     h = y + OY * 2 + 4
-    top = _top("~/github/Green_Eye", f"{stamp[11:]} UTC")
+    top = _top("~/github/Green_Eye")
     bottom = "└" + "─" * INNER + "┘"
     side_rule = (f'<rect x="3" y="{A.CH // 2}" width="2" '
                  f'height="{h - OY * 2 - A.CH}" fill="{c["line"]}"/>'
@@ -483,10 +533,8 @@ def session(d: dict, c: dict) -> str:
            + A.text(0, 0, top["lead"], c["line"])
            + A.text(A.CW * len(top["lead"]), 0, top["path"], c["accent"])
            + A.text(A.CW * top["mid_at"], 0, top["dash"], c["line"])
-           + A.text(A.CW * (top["tail_at"] + 2), 0, top["clock"], c["dim"])
-           + A.text(A.CW * top["tail_at"], 0, top["tail"][:2], c["line"])
-           + A.text(A.CW * (top["tail_at"] + 2 + len(top["clock"])), 0,
-                    top["tail"][2 + len(top["clock"]):], c["line"])
+           + A.text(A.CW * (INNER + 2 - len(top["end"])), 0, top["end"],
+                    c["line"])
            + "".join(body)
            + A.text(0, h - OY * 2 - A.CH, bottom, c["line"])
            + "</g>")
@@ -499,19 +547,23 @@ def session(d: dict, c: dict) -> str:
 def _all_text(d: dict, av: dict, keys, wd) -> str:
     """Everything the card prints, so ascii.defs() can size its <defs>."""
     u = d["user"]
+    about = _about()
     parts = [
-        "session tty1", "GREEN EYE", u.get("login", ""), u.get("location") or "",
+        "~/github/Green_Eye", "GREEN EYE", u.get("login", ""), u.get("location") or "",
         u.get("bio") or "", "$ uptime", "$ cat ~/stack", "$ ls -1 ~/repos | head -3",
         "$ contribution-graph --year", "less more", "streak longest peak active days",
-        "$ history | awk '{print $2}' | cut -d: -f1 | sort | uniq -c", "by hour",
+        "$ history | cut -d: -f1 | uniq -c", "by hour", "lines",
         "peak UTC · hour by hour, from the daily counts",
         "$ make -j4 all && sha1sum ~/profile", "all ok",
         "$ ls -1 ~/repos | head -6", "of repos forks for all ok",
         "mypy.py langs tui.py chars blink.c 20s clock ~/profile UTC",
-        "by bytes written", "no repo yet", "learning in use",
+        "by bytes written", "no repo yet", "learning in use", "▸ · ", "$ date",
+        f"$ cat ~/{about['prompt']}",
+        "".join(i["text"] for i in about["lines"]),
+        "".join(l["label"] for i in about["lines"] for l in i["links"]),
         "".join(n for n, _ in README_LANGS),
         "".join(lbl for _, lbl in TOOLS),
-        "[eye@github ~]$ exit 0", "generated by .github/workflows/readme.yml ·",
+        "[eye@github ~]$ ",
         "since followers following", "contributions commits stars repos rank best",
         d["generated_at"][:16].replace("T", " "),
         "".join(l["name"] for l in d["languages"]),

@@ -1,0 +1,66 @@
+{
+  "_comment": "The hand-written part of the profile. Everything here is typed by the owner, never collected: the terminal prints it and nothing else in the README repeats it. `key` is the short name used in `$ grep ...`.",
+  "prompt": "about",
+  "lines": [
+    {
+      "key": "now",
+      "emoji": "🔭",
+      "text": "currently working on Monarch OS and Aircraft",
+      "links": [
+        {"label": "Monarch OS", "url": "https://github.com/TheBigEye/Monarch-OS"},
+        {"label": "Aircraft", "url": "https://github.com/TheBigEye/Aircraft"}
+      ]
+    },
+    {
+      "key": "love",
+      "emoji": "❤️",
+      "text": "I love Python, Java and C",
+      "links": [
+        {"label": "Python", "url": "https://github.com/topics/python"},
+        {"label": "Java", "url": "https://github.com/topics/java"},
+        {"label": "C", "url": "https://github.com/topics/c"}
+      ]
+    },
+    {
+      "key": "focus",
+      "emoji": "👀",
+      "text": "I am focused on the development of Games, Operating Systems, and IA",
+      "links": [
+        {"label": "Games", "url": "https://github.com/topics/game-engine"},
+        {"label": "Operating Systems", "url": "https://github.com/topics/osdev"},
+        {"label": "IA", "url": "https://github.com/topics/ai"}
+      ]
+    },
+    {
+      "key": "learning",
+      "emoji": "🌱",
+      "text": "I'm currently learning Rust and COBOL for fun.",
+      "links": [
+        {"label": "Rust", "url": "https://github.com/topics/rust"},
+        {"label": "COBOL", "url": "https://github.com/topics/cobol"}
+      ]
+    },
+    {
+      "key": "collab",
+      "emoji": "👯",
+      "text": "I'm currently collaborating on Minicraft+",
+      "links": [
+        {"label": "Minicraft+", "url": "https://github.com/MinicraftPlus/minicraft-plus-revived"}
+      ]
+    },
+    {
+      "key": "fact",
+      "emoji": "⚡",
+      "text": "Fun fact, I love Assembly, is faster and sometimes easy to learn.",
+      "links": [
+        {"label": "Assembly", "url": "https://github.com/topics/assembly-language"}
+      ]
+    },
+    {
+      "key": "color",
+      "emoji": "🎨",
+      "text": "Green is my favorite color.",
+      "links": []
+    }
+  ]
+}

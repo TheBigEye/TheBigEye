@@ -20,17 +20,6 @@ LIVE = os.path.join(ROOT, "assets/readme/live")
 OUT = os.path.join(ROOT, "docs")
 PHOTO = os.environ.get("AVATAR_SRC", "/home/user/uploads/63316583.jpg")
 
-BULLETS = [
-    ("🔭 I’m currently working on <b>Monarch OS</b> and <b>Aircraft</b>."),
-    ("❤️ I love <b>Python</b>, <b>Java</b> and <b>C</b>."),
-    ("👀 I am focused on the development of <b>Games</b>, "
-     "<b>Operating Systems</b>, and <b>IA</b>."),
-    ("🌱 I’m currently learning <b>Rust</b> and <b>COBOL</b> for fun."),
-    ("👯 I’m currently collaborating on <b>Minicraft+</b>."),
-    ("⚡ Fun fact, I love <b>Assembly</b>, is faster and sometimes easy to learn."),
-    ("🎨 <b>Green</b> is my favorite color."),
-]
-
 THEMES = {
     # Only the dark GitHub page is mocked: the card itself is always dark, so
     # that is the pairing worth checking.
@@ -48,7 +37,6 @@ def html(mode: str, data: dict) -> str:
     login, name = u.get("login", ""), u.get("name", "")
     bio = u.get("bio", "")
     followers, following = data["totals"]["followers"], data["totals"]["following"]
-    bullets = "\n".join(f"<li>{b}</li>" for b in BULLETS)
     img = "../assets/readme/live/profile-dark.svg"
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
   * {{ box-sizing: border-box; }}
@@ -111,7 +99,6 @@ def html(mode: str, data: dict) -> str:
     <header><span class="dot"></span> README.md</header>
     <div class="body">
       <div class="card"><img src="{img}"></div>
-      <ul>{bullets}</ul>
       <div class="details"><b>▲ how this README is built</b></div>
     </div>
   </div>
