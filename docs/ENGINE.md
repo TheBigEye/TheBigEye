@@ -20,7 +20,7 @@ scripts/
   update_readme.py  the whole pipeline, the same command the workflow runs
   mock_readme.py    docs/readme-dark.png — the README inside a mock
                     GitHub profile page, to check it in context
-  avatar.py      the photo → assets/readme/data/avatar.json (40×20 ANSI cells)
+  avatar.py      the photo → assets/readme/data/avatar.json (44×24 characters)
   svg/kit.py     palette and the few SVG primitives still in use
   svg/ascii.py   the VGA text layer: font, CP437 table, glyph paths, meters
   svg/common.py  card chrome + the shared motion language
@@ -48,9 +48,9 @@ committed, so the workflow never runs it.
 
 ## Why it is dark only
 
-A terminal with a white background is a contradiction, and the ANSI portrait
-depends on the panel colour: the lids that hide the eye at the blink are filled
-with `panel`, so the picture merges with the screen. Shipping two palettes meant
+A terminal with a white background is a contradiction, and the ASCII portrait
+sits directly on the panel colour: the cells that carry no ink are simply not
+drawn, so the picture merges with the screen. Shipping two palettes meant
 two animations, two PNG checks and a `<picture>` element that could show the
 wrong one after a cache miss. Now `kit.THEMES` holds a single palette, `render`
 writes one SVG, and GitHub — light or dark mode — shows the same console.
@@ -103,40 +103,62 @@ API as soon as it sees a 403**, and then degrades in this order:
 
 ## The motion language
 
-Everything the eye does hangs off **one 16 s clock** (`CYCLE` in
+Everything the eye does hangs off **one played cycle** (`CYCLE` in
 `svg/cards/tui.py`), and every event is expressed as a percentage of it, so the
-gaze and the blink can never drift apart.
+poses can never drift apart.
 
-* **the gaze** — the portrait ships nine cell maps: the centre, eight poses
-  (left and right at two widths, up, down, and two corners). Only the iris patch
-  is swapped, in `steps(1, end)` so the eye *lands* on a pose instead of sliding
-  through pixels. The script changes pose about every 1.5 s and returns to the
-  viewer often — the eye looks at you, glances at the repos, comes back.
-* **the blink** — not a rectangle: nine character rows vanish from the top and
-  nine from the bottom, one row at a time, in the panel colour. The lid is the
-  terminal clearing its own rows, so a blink removes characters instead of
-  covering a picture. While the lids are down a single row of `▄` (the lash)
-  keeps the shape readable. Two slow blinks and a double one per cycle; the
-  fastest row takes 60 ms, which is four frames at 60 Hz.
-* **the breath** — the whole ball scales by 1.5 % over 7.5 s, unrelated to the
-  clock on purpose, so the two motions never synchronise into a loop the eye can
-  predict.
-* **the scan line** — a slow band travelling down the card, 16 s.
+* **the portrait** — 44 × 24 cells of the same VGA grid. Each cell carries a
+  **terminal colour** and an ink level:
+
+  * the colour is an index into the real **xterm-256** table (`xterm256()` builds
+    it: 16 system colours, a 6×6×6 cube, a 24-step grey ramp) — the portrait
+    actually uses ~80 of them, so the iris keeps its olive→yellow falloff and the
+    highlight keeps its blue instead of being crushed into four tones;
+  * a 6×6×6 cube only has six levels per channel, so the colour is chosen with
+    an **ordered (Bayer) dither**: the same trick a 256-colour terminal uses to
+    fake the tones it does not have. `DITHER` and `LIFT` are the two knobs;
+  * the character comes from the short ramp `" .:-=+*#%@"` and encodes ink
+    (brightness blended with local detail). Deliberately short: with 256 colours
+    the colour carries the tone, and a 68-character ramp turned the portrait into
+    a page of random text.
+
+  The pupil is left empty on purpose: on a terminal, black is the absence of ink.
+* **the gaze** — 30 keyframes, *twelve* baked poses (`l1 l2 l3 r1 r2 r3 u1 u2 d1
+  d2` plus two diagonals), and **pauses**: the script alternates movement with
+  holds of one to three seconds where the eye just stares, which is what reads as
+  natural. Each pose is one cell further than the previous one, so a change of
+  direction is a short sequence of small movements instead of a jump.
+* **the whole eye moves, in cells** — past one cell of look, the *body* of the
+  portrait rolls with it (one cell, in `avatar.py`), so the picture is alive as a
+  whole and not an iris sliding inside a frozen frame. This is baked into the
+  maps on purpose: an earlier version animated the portrait with CSS
+  `translate`/`rotate`, which takes the glyphs off the character grid, blurs the
+  text and breaks the illusion. **Every frame is still a terminal printed in the
+  same font, cell for cell** — no transform ever touches the portrait.
+* **tempo** — `SCRIPT` is the duration the table was written for, `CYCLE` the one
+  it plays at (16 s), and `FADE` how fast one pose dissolves into the next
+  (0.18 s). Fast movement, long holds: change `CYCLE` to make the whole
+  performance faster or slower without touching a keyframe.
+* **the scan line** — a slow band travelling down the card, 20 s.
 
 `@media (prefers-reduced-motion: reduce)` turns all of it off.
 
-There is exactly **one cursor** in the session — the block at the prompt. A
-blinking block beside the portrait was removed: two of them looked like two
-shells waiting.
+There is exactly **one** blinking thing in the session: the caret at the prompt
+(`.blink`, 1.1 s, driven by the `caret` keyframes).
 
 ## Make it yours
 
 * **Username** — `README_USER` in the workflow (or the env var locally).
 * **Pinned repos** — `PINS=python-os,monarch-os,...` feeds the projects card.
 * **Palette** — one place: `THEMES` in `scripts/svg/kit.py`.
-* **The portrait** — `scripts/avatar.py` quantises the photo to 10 colours and
-  40×20 cells, emits nine maps (centre plus eight poses) and the iris mask; the
-  card only ever swaps the masked patch.
+* **The photo** — `assets/readme/photo/eye.png` is the source of the portrait;
+  swap it and rerun `avatar.py`. (`AVATAR_SRC` overrides the path.)
+* **The portrait** — `scripts/avatar.py` maps the photo onto 44×24 cells of the
+  xterm-256 palette (`RAMP`, `COLS`/`ROWS`, `DITHER`, `LIFT`, the blur `k` and
+  the detail weight `w` are the knobs), emits nine maps (centre plus eight poses) and the
+  iris mask; the card draws the base once and swaps the masked patch per pose.
+  The payload is two bytes per cell (xterm index + ink level), base64, ~40 kB for
+  the thirteen maps.
 * **The font** — `assets/readme/fonts/vga8x16.json` is the kernel's
   `lib/fonts/font_8x16.c` as base64; every glyph becomes a path of horizontal
   runs, emitted once in `<defs>` and reused with `<use>`.

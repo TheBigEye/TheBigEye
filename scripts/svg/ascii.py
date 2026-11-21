@@ -54,7 +54,10 @@ CP437 = {
 
 EXTRA = {
     "●": 0x07,          # U+25CF, a build light: the bullet dot, drawn round
-    "▸": 0x10, "▶": 0x10, "►": 0x10, "◂": 0x11, "★": 0x07, "☕": 0x07, "•": 0x07,
+    "★": 0x2A,          # U+2605 has no glyph in the VGA font (0x07 is blank),
+                        # so a star is printed as an asterisk: what a terminal
+                        # would actually do.
+    "▸": 0x10, "▶": 0x10, "►": 0x10, "◂": 0x11, "☕": 0x07, "•": 0x07,
     "│": 0xB3, "|": 0xB3, "—": 0xC4, "–": 0xC4, "·": 0xFA, "▬": 0x16,
     "✓": 0xFB, "×": 0x78, "°": 0xF8, "█": 0xDB, "▄": 0xDC, "▀": 0xDF,
 }
