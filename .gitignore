@@ -1,0 +1,10 @@
+# build artefacts
+.qa-*.html
+qa-*.png
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mock-*.html
+# the ghost workflow log book
+.ghost/

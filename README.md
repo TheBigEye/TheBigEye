@@ -1,23 +1,9 @@
-<!-- ------ README --------->
+<!-- ═══════════════ ANIMATED README · generated ═══════════════ -->
 
-<!-- Header -->   
 <p align="center">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/header/header-light.svg" alt="Nice lightning!" id="header-light" width="100%" /> </a> <!-- light mode -->
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/header/header-dark.svg" alt="Too dark!!" id="header-dark" width="100%" /> </a> <!-- dark mode -->
+  <a href="https://github.com/TheBigEye"><img src="assets/readme/live/profile-dark.svg?v=202611210307" alt="The whole profile as one terminal session — the picture is ANSI art" width="100%"></a>
 </p>
 
-<!-- Views -->
-<p align="center"> 
-     <a href="https://github.com/TheBigEye" style="text-shadow: 2px 2px 2px #333;"> <img src="https://komarev.com/ghpvc/?username=TheBigEye&label=Views&style=for-the-badge" /> </a>
-</p>
-
-
-<p align="left">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only"> <img src="assets/readme/image/pc-light.png" id="header-light" width="58%" align="left" id="logo-light" />
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only"> <img src="assets/readme/image/pc-dark.png" id="header-light" width="58%" align="left" id="logo-dark" />
-</p>
-
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
 - 🔭 I’m currently working on **[Monarch OS](https://github.com/TheBigEye/Monarch-OS)** and **[Aircraft](https://github.com/TheBigEye/Aircraft)**.
 - ❤️ I love **[Python](https://github.com/topics/python)**, **[Java](https://github.com/topics/java)** and **[C](https://github.com/topics/c)**.
 - 👀 I am focused on the development of **[Games](https://github.com/topics/game-engine)**, **[Operating Systems](https://github.com/topics/osdev)**, and **[IA](https://github.com/topics/ai)**.
@@ -26,77 +12,37 @@
 - ⚡ Fun fact, I love **[Assembly](https://github.com/topics/assembly-language)**, is faster and sometimes easy to learn.
 - 🎨 **Green** is my favorite color.
 
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<details>
+<summary><b>▲ how this README is built</b></summary>
 
-<!-- User stats -->
-<p align="right">
-     <a href="https://github.com/TheBigEye#gh-light-mode-only">
-          <!-- Light mode -->
-          <img
-               width="48%"
-               align="right"
-               src="assets/readme/stats/stats-light.svg"
-               alt="thebigeye"
-          />
-     </a>
-     <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-          <!-- Dark mode -->
-          <img
-               width="48%"
-               align="right"
-               src="assets/readme/stats/stats-dark.svg"
-               alt="thebigeye"
-          />
-     </a>
-</p>
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+```mermaid
+flowchart LR
+  A["⏱️ every 4 h · push · manual"] --> B["python 3.13 · stdlib only"]
+  B --> C["collect.py<br/>REST · search · calendar"]
+  B --> D["avatar.py<br/>photo → 40×20 ANSI cells"]
+  C --> E[("data.json")]
+  D --> E
+  E --> F["render.py<br/>one animated SVG"]
+  F --> G["git commit"] --> A
+```
 
-<!-- Top langs used -->
-<p align="center">
-  <a href="https://github.com/TheBigEye#gh-light-mode-only">
-      <!-- Light mode -->
-      <img 
-           width="38%"
-           align="center"
-           src="assets/readme/stats/top-langs-light.svg"
-           alt="thebigeye"
-       />
-  </a>
-  <a href="https://github.com/TheBigEye#gh-dark-mode-only">
-      <!-- Dark mode -->
-      <img
-           width="38%"
-           align="center"
-           src="assets/readme/stats/top-langs-dark.svg"
-           alt="thebigeye"
-       />
-  </a>
-</p>
+| what | how | why it is not a screenshot |
+| --- | --- | --- |
+| **telemetry** | REST + search API, contribution calendar per day | re-collected on every run |
+| **portrait** | the photo quantised to 40×20 cells of CP437 blocks | the gaze and the blink are CSS |
+| **terminal** | one SVG window in the VGA console font, CSS keyframes | animation ships inside the file |
 
-<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
+**Last build** `2026-11-21 03:07:10 UTC` · **contributions** `983` · **streak** `1d` / best `55d` · **rank** `B+` · **degraded sources** `9`
 
-<!-- Contributions -->
-<a href="https://github.com/TheBigEye#gh-light-mode-only">
-     <!-- Light mode -->
-     <img
-          align="left"
-          alt="TheBigEye's Activity Graph" 
-          src="assets/readme/stats/activity-light.svg" 
-     />
-</a>
-<a href="https://github.com/TheBigEye#gh-dark-mode-only">
-     <!-- Dark mode -->
-     <img 
-          align="left"
-          alt="TheBigEye's Activity Graph." 
-          src="assets/readme/stats/activity-dark.svg" 
-     />
-</a>
+<sub>Rendered by `scripts/` from the GitHub API and the contribution calendar. Sources that fail are noted above; the rest of the README still renders.</sub>
 
-<!-- -------------------------------------------------------------------------- Credits ------------------------------------------------------------------------------>
-<!-- Header and footer svgs --- kyechan99/capsule-render -->
-<!-- Views counter --- antonkomarev/github-profile-views-counter -->
-<!-- Stats, top langs --- stats-organization/github-readme-stats-action -->
-<!-- Activity graph --- maurodesouza/github-readme-activity-graph-action -->
-<!-- Cards are generated by .github/workflows/readme-stats.yml -->
-<!-- ---------------------------------------------------------------------------- END -------------------------------------------------------------------------------->
+</details>
+
+<!-- ═════════════════════════════ END GENERATED ═════════════════════════════ -->
+
+<!-- ─────────────────────────────── credits ───────────────────────────────
+  Cards and animation: scripts/ (stdlib only)
+  Typeface: Linux console font Default8x16 (CP437) — assets/readme/fonts/
+  Brand marks: Simple Icons (CC0) — assets/readme/icons/brands.json
+  Regenerated by .github/workflows/readme.yml
+──────────────────────────────────────────────────────────────────────────── -->

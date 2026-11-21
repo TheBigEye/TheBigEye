@@ -1,0 +1,81 @@
+name: 🎬 Animated README
+
+# Rebuilds the whole profile: telemetry → data.json → 12 animated SVGs → README.md
+#
+# Everything runs on the standard library. The avatar (photo → ANSI cells) needs
+# Pillow + numpy, so it is run by hand when the picture changes and its output is
+# committed; the workflow only reads that file.
+#
+# Two workflows can fight over the same branch, so this one waits politely and
+# rebases instead of force-pushing.
+
+on:
+  schedule:
+    - cron: '7 */4 * * *'        # every 4 hours, off the congested minutes
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'assets/readme/image/**'
+      - '.github/workflows/readme.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-build-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  README_USER: TheBigEye
+  # A PAT with `read:user` unlocks GraphQL and a bigger rate limit.
+  # Without it the build still works: it just falls back to public data.
+  GH_PAT: ${{ secrets.GH_STATS_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 🧬 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: 🎬 Build everything
+        env:
+          GITHUB_TOKEN: ${{ env.GH_PAT || secrets.GITHUB_TOKEN }}
+          README_USER: TheBigEye
+        run: python3 scripts/update_readme.py
+
+      - name: 💾 Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/readme/live assets/readme/data README.md docs/preview.html
+          if git diff --cached --quiet; then
+            echo "📭 Nothing changed — the eye is already up to date."
+            exit 0
+          fi
+          git commit -m "🎬 Animated README build $(date -u '+%Y-%m-%d %H:%M UTC')" \
+                     -m "telemetry · animated svg cards · readme · history snapshot"
+
+      - name: 🚀 Push
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD; then exit 0; fi
+            echo "⚠️  push rejected (attempt $attempt/5) — rebasing"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase --committer-date-is-author-date "origin/${GITHUB_REF_NAME}" || {
+              git rebase --abort; git pull --no-rebase -X ours origin "${GITHUB_REF_NAME}"
+            }
+            sleep $((attempt * 3))
+          done
+          echo "❌ could not push after 5 attempts"; exit 1

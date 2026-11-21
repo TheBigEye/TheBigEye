@@ -1,0 +1,70 @@
+/* ── profile-dark ───────────────────────────── */
+
+  .blink { animation: blink-profile-dark 1.1s steps(1,end) infinite; }
+  @keyframes blink-profile-dark { 0%,55% { opacity:1 } 56%,100% { opacity:0 } }
+  .wipe { animation: wipe-profile-dark 1.1s cubic-bezier(.6,0,.35,1) both;
+          transform-box: fill-box; transform-origin: top center; }
+  @keyframes wipe-profile-dark { from { transform: scaleY(1) } to { transform: scaleY(0) } }
+  .scan { animation: scan-profile-dark 16s linear 3s infinite; }
+  @keyframes scan-profile-dark { 0% { transform: translateY(0); opacity:0 }
+                    3% { opacity:.2 } 97% { opacity:.07 }
+                    100% { transform: translateY(1178 px); opacity:0 } }
+  .look, .shut { opacity: 0; }
+  @keyframes g-l1-profile-dark { 0%{opacity:0} 43.750%{opacity:1} 49.375%{opacity:0} 75.625%{opacity:1} 81.250%{opacity:0} }
+  .g-l1 { animation: g-l1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-l2-profile-dark { 0%{opacity:0} 49.375%{opacity:1} 55.000%{opacity:0} }
+  .g-l2 { animation: g-l2-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-r1-profile-dark { 0%{opacity:0} 8.750%{opacity:1} 15.625%{opacity:0} 70.625%{opacity:1} 75.625%{opacity:0} }
+  .g-r1 { animation: g-r1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-r2-profile-dark { 0%{opacity:0} 15.625%{opacity:1} 22.500%{opacity:0} }
+  .g-r2 { animation: g-r2-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-u1-profile-dark { 0%{opacity:0} 27.500%{opacity:1} 33.125%{opacity:0} }
+  .g-u1 { animation: g-u1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-d1-profile-dark { 0%{opacity:0} 60.000%{opacity:1} 65.625%{opacity:0} }
+  .g-d1 { animation: g-d1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-g1-profile-dark { 0%{opacity:0} 33.125%{opacity:1} 38.750%{opacity:0} }
+  .g-g1 { animation: g-g1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes g-g2-profile-dark { 0%{opacity:0} 86.875%{opacity:1} 92.500%{opacity:0} }
+  .g-g2 { animation: g-g2-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t0-profile-dark { 0%{opacity:0} 12.500%{opacity:1} 17.750%{opacity:0} 56.250%{opacity:1} 60.375%{opacity:0} 59.062%{opacity:1} 63.688%{opacity:0} 93.750%{opacity:1} 100.750%{opacity:0} }
+  .lid-t0 { animation: lid-t0-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t1-profile-dark { 0%{opacity:0} 12.736%{opacity:1} 17.472%{opacity:0} 56.458%{opacity:1} 60.167%{opacity:0} 59.271%{opacity:1} 63.451%{opacity:0} 94.028%{opacity:1} 100.403%{opacity:0} }
+  .lid-t1 { animation: lid-t1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t2-profile-dark { 0%{opacity:0} 12.972%{opacity:1} 17.194%{opacity:0} 56.667%{opacity:1} 59.958%{opacity:0} 59.479%{opacity:1} 63.215%{opacity:0} 94.306%{opacity:1} 100.056%{opacity:0} }
+  .lid-t2 { animation: lid-t2-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t3-profile-dark { 0%{opacity:0} 13.208%{opacity:1} 16.917%{opacity:0} 56.875%{opacity:1} 59.750%{opacity:0} 59.687%{opacity:1} 62.979%{opacity:0} 94.583%{opacity:1} 99.708%{opacity:0} }
+  .lid-t3 { animation: lid-t3-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t4-profile-dark { 0%{opacity:0} 13.444%{opacity:1} 16.639%{opacity:0} 57.083%{opacity:1} 59.542%{opacity:0} 59.896%{opacity:1} 62.743%{opacity:0} 94.861%{opacity:1} 99.361%{opacity:0} }
+  .lid-t4 { animation: lid-t4-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t5-profile-dark { 0%{opacity:0} 13.681%{opacity:1} 16.361%{opacity:0} 57.292%{opacity:1} 59.333%{opacity:0} 60.104%{opacity:1} 62.507%{opacity:0} 95.139%{opacity:1} 99.014%{opacity:0} }
+  .lid-t5 { animation: lid-t5-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t6-profile-dark { 0%{opacity:0} 13.917%{opacity:1} 16.083%{opacity:0} 57.500%{opacity:1} 59.125%{opacity:0} 60.312%{opacity:1} 62.271%{opacity:0} 95.417%{opacity:1} 98.667%{opacity:0} }
+  .lid-t6 { animation: lid-t6-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t7-profile-dark { 0%{opacity:0} 14.153%{opacity:1} 15.806%{opacity:0} 57.708%{opacity:1} 58.917%{opacity:0} 60.521%{opacity:1} 62.035%{opacity:0} 95.694%{opacity:1} 98.319%{opacity:0} }
+  .lid-t7 { animation: lid-t7-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-t8-profile-dark { 0%{opacity:0} 14.389%{opacity:1} 15.528%{opacity:0} 57.917%{opacity:1} 58.708%{opacity:0} 60.729%{opacity:1} 61.799%{opacity:0} 95.972%{opacity:1} 97.972%{opacity:0} }
+  .lid-t8 { animation: lid-t8-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b0-profile-dark { 0%{opacity:0} 12.500%{opacity:1} 17.750%{opacity:0} 56.250%{opacity:1} 60.375%{opacity:0} 59.062%{opacity:1} 63.688%{opacity:0} 93.750%{opacity:1} 100.750%{opacity:0} }
+  .lid-b0 { animation: lid-b0-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b1-profile-dark { 0%{opacity:0} 12.736%{opacity:1} 17.472%{opacity:0} 56.458%{opacity:1} 60.167%{opacity:0} 59.271%{opacity:1} 63.451%{opacity:0} 94.028%{opacity:1} 100.403%{opacity:0} }
+  .lid-b1 { animation: lid-b1-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b2-profile-dark { 0%{opacity:0} 12.972%{opacity:1} 17.194%{opacity:0} 56.667%{opacity:1} 59.958%{opacity:0} 59.479%{opacity:1} 63.215%{opacity:0} 94.306%{opacity:1} 100.056%{opacity:0} }
+  .lid-b2 { animation: lid-b2-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b3-profile-dark { 0%{opacity:0} 13.208%{opacity:1} 16.917%{opacity:0} 56.875%{opacity:1} 59.750%{opacity:0} 59.687%{opacity:1} 62.979%{opacity:0} 94.583%{opacity:1} 99.708%{opacity:0} }
+  .lid-b3 { animation: lid-b3-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b4-profile-dark { 0%{opacity:0} 13.444%{opacity:1} 16.639%{opacity:0} 57.083%{opacity:1} 59.542%{opacity:0} 59.896%{opacity:1} 62.743%{opacity:0} 94.861%{opacity:1} 99.361%{opacity:0} }
+  .lid-b4 { animation: lid-b4-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b5-profile-dark { 0%{opacity:0} 13.681%{opacity:1} 16.361%{opacity:0} 57.292%{opacity:1} 59.333%{opacity:0} 60.104%{opacity:1} 62.507%{opacity:0} 95.139%{opacity:1} 99.014%{opacity:0} }
+  .lid-b5 { animation: lid-b5-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b6-profile-dark { 0%{opacity:0} 13.917%{opacity:1} 16.083%{opacity:0} 57.500%{opacity:1} 59.125%{opacity:0} 60.312%{opacity:1} 62.271%{opacity:0} 95.417%{opacity:1} 98.667%{opacity:0} }
+  .lid-b6 { animation: lid-b6-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b7-profile-dark { 0%{opacity:0} 14.153%{opacity:1} 15.806%{opacity:0} 57.708%{opacity:1} 58.917%{opacity:0} 60.521%{opacity:1} 62.035%{opacity:0} 95.694%{opacity:1} 98.319%{opacity:0} }
+  .lid-b7 { animation: lid-b7-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lid-b8-profile-dark { 0%{opacity:0} 14.389%{opacity:1} 15.528%{opacity:0} 57.917%{opacity:1} 58.708%{opacity:0} 60.729%{opacity:1} 61.799%{opacity:0} 95.972%{opacity:1} 97.972%{opacity:0} }
+  .lid-b8 { animation: lid-b8-profile-dark 16.0s steps(1,end) infinite; }
+  @keyframes lash-profile-dark { 0%{opacity:0} 14.327%{opacity:1} 15.700%{opacity:0} 57.862%{opacity:1} 58.838%{opacity:0} 60.675%{opacity:1} 61.945%{opacity:0} 95.900%{opacity:1} 98.188%{opacity:0} }
+  .lash { animation: lash-profile-dark 16.0s steps(1,end) infinite; }
+  .ball { animation: breathe-profile-dark 7.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes breathe-profile-dark { 0%,100% { transform: scale(1) } 50% { transform: scale(.985) } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none-profile-dark !important } }
+
