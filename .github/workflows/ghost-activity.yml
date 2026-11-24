@@ -129,7 +129,8 @@ jobs:
               with open(LOG, "a", encoding="utf-8") as f:
                   f.write(f"[{stamp}] Pixel [{week},{wd}] | ID: {sysrand.getrandbits(24):06x}\n")
               env = dict(os.environ, GIT_AUTHOR_DATE=f"{stamp}+00:00", GIT_COMMITTER_DATE=f"{stamp}+00:00")
-              subprocess.run(["git", "add", ".ghost/"], check=True)
+              # .ghost/ is intentionally ignored; stage only the ledger we track.
+              subprocess.run(["git", "add", "-f", "--", LOG], check=True)
               subprocess.run(["git", "commit", "-q", "--allow-empty", "-m", sysrand.choice(MESSAGES),
                               "-m", f"🎨 Pixel: Week {week}, Day {wd}"], check=True, env=env)
               print(f"   ✓ {stamp}Z  pixel [{week},{wd}]")
