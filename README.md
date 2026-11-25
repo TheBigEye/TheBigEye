@@ -1,7 +1,7 @@
 <!-- ═══════════════ ANIMATED README · generated ═══════════════ -->
 
 <p align="center">
-  <a href="https://github.com/TheBigEye"><img src="assets/readme/live/profile-dark.svg?v=202611241445" alt="The whole profile as one terminal session — the picture is ANSI art" width="100%"></a>
+  <a href="https://github.com/TheBigEye"><img src="assets/readme/live/profile-dark.svg?v=202611250035" alt="The whole profile as one terminal session — the picture is ANSI art" width="100%"></a>
 </p>
 
 <!-- ═════════════════════════════ END GENERATED ═════════════════════════════ -->
